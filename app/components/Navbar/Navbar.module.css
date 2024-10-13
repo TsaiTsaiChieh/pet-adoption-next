@@ -1,0 +1,16 @@
+.nav {
+  padding: 10px;
+  background: var(--primary-color);
+}
+
+.nav__iconContent {
+  display: flex;
+  align-items: center;
+  color: white;
+  gap: 10px;
+}
+
+.nav__title {
+  font-weight: bold;
+  font-size: 24px;
+}
