@@ -1,14 +1,15 @@
 import { MdPets } from "react-icons/md";
 import styles from "./Navbar.module.css";
+import { Center, Flex, Heading } from "@chakra-ui/react";
 
 const Navbar = () => {
   return (
-    <nav className={styles.nav}>
-      <div className={styles.nav__iconContent}>
+    <Center className={styles.nav}>
+      <Flex className={styles.nav__iconContent}>
         <MdPets size={28} />
-        <h1 className={styles.nav__title}>PET ADOPTION</h1>
-      </div>
-    </nav>
+        <Heading className={styles.nav__title}>PET ADOPTION</Heading>
+      </Flex>
+    </Center>
   );
 };
 

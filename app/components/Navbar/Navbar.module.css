@@ -3,8 +3,6 @@
 }
 
 .nav__iconContent {
-  display: flex;
-  align-items: center;
   justify-content: center;
   color: var(--primary-color);
   gap: 10px;
