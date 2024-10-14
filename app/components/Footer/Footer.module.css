@@ -1,0 +1,28 @@
+.footer {
+  width: 100%;
+  padding: 10px 20px;
+  background: var(--primary-color);
+}
+
+
+.footer__contactWrap {
+  display: flex;
+  color: white;
+  gap: 10px;
+  align-items: center;
+}
+
+.footer__contact {
+  display: flex;
+  flex-direction: column;
+
+}
+
+
+.footer__report {
+  font-size: 11px;
+}
+
+.footer__contactMe {
+  font-size: 11px;
+}

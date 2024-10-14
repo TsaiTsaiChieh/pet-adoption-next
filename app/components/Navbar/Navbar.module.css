@@ -1,12 +1,12 @@
 .nav {
   padding: 10px;
-  background: var(--primary-color);
 }
 
 .nav__iconContent {
   display: flex;
   align-items: center;
-  color: white;
+  justify-content: center;
+  color: var(--primary-color);
   gap: 10px;
 }
 

@@ -6,7 +6,7 @@ const Navbar = () => {
     <nav className={styles.nav}>
       <div className={styles.nav__iconContent}>
         <MdPets size={28} />
-        <h1 className={styles.nav__title}>認養毛孩</h1>
+        <h1 className={styles.nav__title}>PET ADOPTION</h1>
       </div>
     </nav>
   );
