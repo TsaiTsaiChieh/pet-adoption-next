@@ -3,7 +3,7 @@
 }
 
 .nav__iconContent {
-  justify-content: center;
+  align-items: center;
   color: var(--primary-color);
   gap: 10px;
 }
