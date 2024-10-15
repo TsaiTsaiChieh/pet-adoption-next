@@ -3,8 +3,7 @@ import type { Metadata } from "next";
 import localFont from "next/font/local";
 import Navbar from "./components/Navbar/Navbar";
 import Footer from "./components/Footer/Footer";
-import { baseTheme } from "@chakra-ui/theme";
-import { Provider } from "@chakra-ui/react/provider";
+import { ChakraProvider } from "@chakra-ui/react";
 
 const geistSans = localFont({
   src: "./fonts/GeistVF.woff",
@@ -30,11 +29,11 @@ export default function RootLayout({
   return (
     <html lang='en'>
       <body className={`${geistSans.variable} ${geistMono.variable}`}>
-        <Provider theme={baseTheme}>
+        <ChakraProvider>
           <Navbar />
           {children}
           <Footer />
-        </Provider>
+        </ChakraProvider>
       </body>
     </html>
   );
