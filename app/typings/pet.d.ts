@@ -1,0 +1,33 @@
+type PetSexType = "F" | "M" | "U";
+type PetStatusType = "unknown" | "open" | "adopted" | "other" | "dead";
+
+type PetDataType = {
+  animal_id: number;
+  animal_subid: string;
+  animal_area_pkid: number;
+  animal_shelter_pkid: number;
+  animal_place: string;
+  animal_kind: string;
+  animal_Variety: string;
+  animal_sex: PetSexType;
+  animal_bodytype: string;
+  animal_colour: string;
+  animal_age: string;
+  animal_sterilization: TernaryType;
+  animal_bacterin: TernaryType;
+  animal_foundplace: string;
+  animal_title: string;
+  animal_status: PetStatusType;
+  animal_remark: string;
+  animal_caption: string;
+  animal_opendate: string;
+  animal_closeddate: string;
+  animal_update: string;
+  animal_createtime: string;
+  shelter_name: string;
+  album_file: string;
+  album_update: string;
+  cDate: string;
+  shelter_address: string;
+  shelter_tel: string;
+};

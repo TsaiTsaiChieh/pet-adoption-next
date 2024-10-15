@@ -1,0 +1,1 @@
+type PetRes = PetDataType[];
