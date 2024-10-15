@@ -1,5 +1,6 @@
 .nav {
   padding: 10px;
+  border-bottom: 3px solid var(--primary-color);
 }
 
 .nav__iconContent {
