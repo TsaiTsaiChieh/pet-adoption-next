@@ -1,9 +1,13 @@
-:root {
+@import "./reset";
+
+:root
+{
   --primary-color: #7A6BBC;
   --secondary-color: #DDDDDD;
   --background-color: #F4F7FE;
 }
 
-body {
-  background: var(--background-color);
+body
+{
+  background: var(--primary-color);
 }
