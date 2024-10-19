@@ -1,84 +1,66 @@
-import { Badge, Box, Image } from "@chakra-ui/react";
+import { Box, Image, Flex, Divider, Collapse, Button } from "@chakra-ui/react";
+import styles from "./PetCard.module.scss";
+import { MdPlace } from "react-icons/md";
+import LabelBox from "../LabelBox/LabelBox";
+import Shelter from "../Shelter/Shelter";
 
 interface Props {
   id: number;
+  subId: string;
+  kind: string;
+  sex: string;
+  color: string;
+  place: string;
   img: string;
+  age: string;
+  phone: string;
+  address: string;
+  remark: string;
 }
-const PetCard = ({ id, img }: Props) => {
-  const property = {
-    imageUrl: "https://bit.ly/2Z4KKcF",
-    imageAlt: "Rear view of modern home with pool",
-    beds: 3,
-    baths: 2,
-    title: "Modern home in city center in the heart of historic Los Angeles",
-    formattedPrice: "$1,900.00",
-    reviewCount: 34,
-    rating: 4,
-  };
-  return (
-    <Box
-      width='210px'
-      height='400px'
-      borderWidth='2px'
-      borderRadius='lg'
-      overflow='hidden'
-    >
-      <Box
-        width='200px'
-        height='200px'
-        overflow='hidden'
-        borderRadius='md'
-        boxShadow='md'
-      >
-        <Image src={img} alt={id.toString()} objectFit='cover' />
-      </Box>
-      <Box p='6'>
-        <Box display='flex' alignItems='baseline'>
-          <Badge borderRadius='full' px='2' colorScheme='teal'>
-            New
-          </Badge>
-          <Box
-            color='gray.500'
-            fontWeight='semibold'
-            letterSpacing='wide'
-            fontSize='xs'
-            textTransform='uppercase'
-            ml='2'
-          >
-            {property.beds} beds &bull; {property.baths} baths
-          </Box>
-        </Box>
+const PetCard = ({
+  id,
+  subId,
+  kind,
+  sex,
+  color,
+  place,
+  img,
+  age,
+  phone,
+  address,
+  remark,
+}: Props) => {
+  const details = [
+    { label: "性別", value: sex },
+    { label: "年齡", value: age },
+    { label: "顏色", value: color },
+  ];
 
-        <Box
-          mt='1'
-          fontWeight='semibold'
-          as='h4'
-          lineHeight='tight'
-          noOfLines={1}
-        >
-          {property.title}
-        </Box>
+  return (
+    <Box className={styles.petCard}>
+      <Image src={img} alt={id.toString()} className={styles.petCard__avatar} />
+
+      <Box className={styles.petCard__desc}>
+        <span className={styles.petCard__title}>{subId}</span>
+        <Flex className={styles.petCard__placeWrap}>
+          <MdPlace className={styles.petCard__placeIcon} />
+          <span className={styles.petCard__placeText}>{place}</span>
+        </Flex>
+
+        <Flex className={styles.petCard__detailWrap}>
+          {details.map(ele => (
+            <LabelBox key={ele.label} label={ele.label} value={ele.value} />
+          ))}
+        </Flex>
 
         <Box>
-          {property.formattedPrice}
-          <Box as='span' color='gray.600' fontSize='sm'>
-            / wk
-          </Box>
+          <Shelter place={place} phone={phone} address={address} />
         </Box>
-
-        <Box display='flex' mt='2' alignItems='center'>
-          {Array(5)
-            .fill("")
-            .map((_, i) => (
-              <i
-                key={i}
-                color={i < property.rating ? "teal.500" : "gray.300"}
-              />
-            ))}
-          <Box as='span' ml='2' color='gray.600' fontSize='sm'>
-            {property.reviewCount} reviews
-          </Box>
-        </Box>
+        <Divider />
+        <Collapse startingHeight={40} className={styles.petCard__remark}>
+          {remark}
+        </Collapse>
+        <Button className={styles.petCard__adoptButton}>領養我</Button>
       </Box>
     </Box>
   );

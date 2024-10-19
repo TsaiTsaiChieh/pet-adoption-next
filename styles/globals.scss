@@ -2,12 +2,17 @@
 
 :root
 {
-  --primary-color: #7A6BBC;
-  --secondary-color: #DDDDDD;
+  --primary-color: #7B6BBC;
+  --secondary-color: #F6F7FE;
   --background-color: #F4F7FE;
 }
 
 body
 {
-  background: var(--primary-color);
+  background: var(--secondary-color) !important;
 }
+
+// *
+// {
+//   outline: 1px solid red;
+// }

@@ -1,0 +1,94 @@
+@import "@styles/mixin.scss";
+
+
+.petCard
+{
+  width: 100%;
+  height: calc(100vh - 70px);
+  background: white;
+  border-radius: 10px;
+
+  @include respond-to(pad)
+  {
+    height: 650px;
+  }
+
+  @include respond-to(desktop)
+  {
+    height: 95%;
+    height: 770px;
+  }
+}
+
+.petCard__avatar
+{
+  width: 94%;
+  height: 300px;
+  margin: 10px auto;
+  object-fit: cover;
+  border-radius: 10px;
+
+  @include respond-to(pad)
+  {
+    height: 400px;
+  }
+
+  @include respond-to(desktop)
+  {
+    width: 90%;
+  }
+}
+
+
+.petCard__desc
+{
+  display: flex;
+  flex-direction: column;
+  padding: 1em 1em 0 1em;
+  gap: 8px;
+}
+
+.petCard__title
+{
+  font-weight: bold;
+  color: black;
+  font-size: 20px;
+}
+
+.petCard__placeWrap
+{
+  gap: 8px;
+  align-items: stretch;
+}
+
+.petCard__placeIcon
+{
+  color: var(--primary-color);
+  font-size: 28px;
+}
+
+.petCard__placeText
+{
+  font-size: 16px;
+  color: gray
+}
+
+.petCard__detailWrap
+{
+  justify-content: space-between;
+}
+
+.petCard__remark
+{
+  font-size: 14px;
+  color: gray;
+  height: 20px;
+}
+
+.petCard__adoptButton
+{
+  padding: 2px;
+  background: var(--primary-color) !important;
+  color: white !important;
+  letter-spacing: 1.5px;
+}

@@ -1,0 +1,30 @@
+.shelterWrap
+{
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin-top: 8px;
+}
+
+.shelterWrap__avatar
+{}
+
+.shelterWrap__detail
+{
+  display: flex;
+  flex-direction: column;
+}
+
+.shelterWrap__address
+{
+  color: black;
+  font-weight: bold;
+  font-size: 12px;
+}
+
+
+.shelterWrap__phone
+{
+  color: gray;
+  font-size: 12px;
+}
