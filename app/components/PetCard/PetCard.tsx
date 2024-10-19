@@ -20,7 +20,7 @@ interface Props {
 const PetCard = ({
   id,
   subId,
-  _kind,
+  // kind,
   sex,
   color,
   place,
@@ -35,7 +35,6 @@ const PetCard = ({
     { label: "年齡", value: age },
     { label: "顏色", value: color },
   ];
-
   return (
     <Box className={styles.petCard}>
       <Image src={img} alt={id.toString()} className={styles.petCard__avatar} />
