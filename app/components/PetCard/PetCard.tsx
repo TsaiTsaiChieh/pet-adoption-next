@@ -20,7 +20,7 @@ interface Props {
 const PetCard = ({
   id,
   subId,
-  kind,
+  _kind,
   sex,
   color,
   place,
