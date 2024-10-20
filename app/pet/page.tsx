@@ -33,6 +33,9 @@ const Pet = () => {
             phone={pet.shelter_tel}
             address={pet.shelter_address}
             remark={pet.animal_remark}
+            bodyType={pet.animal_bodytype}
+            bacterin={pet.animal_bacterin}
+            sterilization={pet.animal_sterilization}
           />
         ))}
     </Grid>

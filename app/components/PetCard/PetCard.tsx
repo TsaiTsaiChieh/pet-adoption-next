@@ -3,7 +3,12 @@ import styles from "./PetCard.module.scss";
 import { MdPlace } from "react-icons/md";
 import LabelBox from "../LabelBox/LabelBox";
 import Shelter from "../Shelter/Shelter";
-import { ageConverter, sexConverter } from "@app/utils/converter";
+import {
+  ageConverter,
+  bodyConverter,
+  sexConverter,
+  ternaryConverter,
+} from "@app/utils/converter";
 
 interface Props {
   id: number;
@@ -17,6 +22,9 @@ interface Props {
   phone: string;
   address: string;
   remark: string;
+  bodyType: PetBodyType;
+  bacterin: TernaryType;
+  sterilization: TernaryType;
 }
 const PetCard = ({
   id,
@@ -30,15 +38,27 @@ const PetCard = ({
   phone,
   address,
   remark,
+  bodyType,
+  bacterin,
+  sterilization,
 }: Props) => {
   const details = [
     { label: "性別", value: sexConverter(sex) },
     { label: "年齡", value: ageConverter(age) },
     { label: "顏色", value: color },
   ];
+  const genDetail = `${remark ? `${remark}；` : ""}體型為${bodyConverter(
+    bodyType
+  )}；${ternaryConverter(bacterin)}施打狂犬病疫苗；${ternaryConverter(
+    sterilization
+  )}絕育`;
   return (
     <Box className={styles.petCard}>
-      <Image src={img} alt={id.toString()} className={styles.petCard__avatar} />
+      <Image
+        src={img === "" ? "/imgs/no-pic.svg" : img}
+        alt={id.toString()}
+        className={styles.petCard__avatar}
+      />
 
       <Box className={styles.petCard__desc}>
         <span className={styles.petCard__title}>{subId}</span>
@@ -58,7 +78,7 @@ const PetCard = ({
         </Box>
         <Divider />
         <Collapse startingHeight={40} className={styles.petCard__remark}>
-          {remark}
+          {genDetail}
         </Collapse>
         <Button className={styles.petCard__adoptButton}>領養我</Button>
       </Box>
