@@ -1,5 +1,6 @@
 type PetSexType = "F" | "M" | "N";
 type PetAgeType = "CHILD" | "ADULT";
+type PetBodyType = "SMALL" | "MEDIUM" | "BIG";
 type PetStatusType = "unknown" | "open" | "adopted" | "other" | "dead";
 
 type PetDataType = {
@@ -11,9 +12,9 @@ type PetDataType = {
   animal_kind: string;
   animal_Variety: string;
   animal_sex: PetSexType;
-  animal_bodytype: string;
+  animal_bodytype: PetBodyType;
   animal_colour: string;
-  animal_age: string;
+  animal_age: PetAgeType;
   animal_sterilization: TernaryType;
   animal_bacterin: TernaryType;
   animal_foundplace: string;
