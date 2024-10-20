@@ -3,16 +3,17 @@ import styles from "./PetCard.module.scss";
 import { MdPlace } from "react-icons/md";
 import LabelBox from "../LabelBox/LabelBox";
 import Shelter from "../Shelter/Shelter";
+import { ageConverter, sexConverter } from "@app/utils/converter";
 
 interface Props {
   id: number;
   subId: string;
   kind: string;
-  sex: string;
+  sex: PetSexType;
   color: string;
   place: string;
   img: string;
-  age: string;
+  age: PetAgeType;
   phone: string;
   address: string;
   remark: string;
@@ -31,8 +32,8 @@ const PetCard = ({
   remark,
 }: Props) => {
   const details = [
-    { label: "性別", value: sex },
-    { label: "年齡", value: age },
+    { label: "性別", value: sexConverter(sex) },
+    { label: "年齡", value: ageConverter(age) },
     { label: "顏色", value: color },
   ];
   return (

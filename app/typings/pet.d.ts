@@ -1,4 +1,5 @@
-type PetSexType = "F" | "M" | "U";
+type PetSexType = "F" | "M" | "N";
+type PetAgeType = "CHILD" | "ADULT";
 type PetStatusType = "unknown" | "open" | "adopted" | "other" | "dead";
 
 type PetDataType = {

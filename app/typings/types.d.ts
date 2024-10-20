@@ -1,1 +1,1 @@
-type TernaryType = "T" | "F" | "U";
+type TernaryType = "T" | "F" | "N";
