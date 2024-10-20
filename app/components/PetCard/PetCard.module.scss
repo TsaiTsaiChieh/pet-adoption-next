@@ -4,26 +4,17 @@
 .petCard
 {
   width: 100%;
-  height: calc(100vh - 70px);
+  height: auto;
   background: white;
   border-radius: 10px;
   box-shadow: 4px 8px 15px rgba(0, 0, 0, 0.15);
+  overflow: hidden;
 
   &:hover
   {
     box-shadow: 4px 8px 20px rgba(0, 0, 0, 0.3);
   }
 
-  @include respond-to(pad)
-  {
-    height: 650px;
-  }
-
-  @include respond-to(desktop)
-  {
-    height: 95%;
-    height: 770px;
-  }
 }
 
 .petCard__avatar
@@ -50,7 +41,7 @@
 {
   display: flex;
   flex-direction: column;
-  padding: 1em 1em 0 1em;
+  padding: 1em;
   gap: 8px;
 }
 
