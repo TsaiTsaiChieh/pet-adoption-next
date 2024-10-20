@@ -7,6 +7,12 @@
   height: calc(100vh - 70px);
   background: white;
   border-radius: 10px;
+  box-shadow: 4px 8px 15px rgba(0, 0, 0, 0.15);
+
+  &:hover
+  {
+    box-shadow: 4px 8px 20px rgba(0, 0, 0, 0.3);
+  }
 
   @include respond-to(pad)
   {
@@ -57,19 +63,18 @@
 
 .petCard__placeWrap
 {
-  gap: 8px;
   align-items: stretch;
 }
 
 .petCard__placeIcon
 {
   color: var(--primary-color);
-  font-size: 28px;
+  font-size: 26px;
 }
 
 .petCard__placeText
 {
-  font-size: 16px;
+  font-size: 15px;
   color: gray
 }
 
