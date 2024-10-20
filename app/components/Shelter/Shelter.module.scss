@@ -7,7 +7,10 @@
 }
 
 .shelterWrap__avatar
-{}
+{
+  background: var(--primary-color) !important;
+  color: white !important;
+}
 
 .shelterWrap__detail
 {

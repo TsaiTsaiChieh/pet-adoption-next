@@ -1,6 +1,5 @@
 import { Avatar, Collapse, Flex, Text } from "@chakra-ui/react";
 import styles from "./Shelter.module.scss";
-
 interface Props {
   place: string;
   address: string;
