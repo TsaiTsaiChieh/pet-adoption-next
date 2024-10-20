@@ -3,7 +3,7 @@
 
 .petCard
 {
-  width: 100%;
+  width: 80vw;
   height: auto;
   background: white;
   border-radius: 10px;
@@ -15,6 +15,15 @@
     box-shadow: 4px 8px 20px rgba(0, 0, 0, 0.3);
   }
 
+  @include respond-to(pad)
+  {
+    width: 38vw;
+  }
+
+  @include respond-to(desktop)
+  {
+    width: 24vw;
+  }
 }
 
 .petCard__avatar
