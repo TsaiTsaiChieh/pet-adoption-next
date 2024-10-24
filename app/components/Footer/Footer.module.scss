@@ -1,28 +1,64 @@
-.footer {
+@import "@styles/mixin";
+
+.footer
+{
   width: 100%;
   padding: 10px 20px;
   background: var(--primary-color);
+  display: flex;
 }
 
+.footer__content
+{
+  width: 90%;
+  margin: auto;
 
-.footer__contactWrap {
-  display: flex;
+  @include respond-to(pad)
+  {
+    width: 85%;
+  }
+
+  @include respond-to(desktop)
+  {
+    width: 80%;
+  }
+}
+
+.footer__contactWrap
+{
+  width: 30%;
+  margin: auto;
   color: white;
   gap: 10px;
   align-items: center;
+  margin-right: auto;
+
+
+
+
 }
 
-.footer__contact {
+.footer__contact
+{
   display: flex;
   flex-direction: column;
 
 }
 
 
-.footer__report {
+.footer__report
+{
   font-size: 11px;
 }
 
-.footer__contactMe {
+.footer__contactMe
+{
+  font-size: 11px;
+}
+
+.footer__warningWrap
+{
+  width: 70%;
+  color: white;
   font-size: 11px;
 }
