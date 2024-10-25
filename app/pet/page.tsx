@@ -1,25 +1,17 @@
 "use client";
 import PetCard from "@app/components/PetCard/PetCard";
-import { useEffect, useState } from "react";
 import styles from "./page.module.scss";
 import { Grid } from "@chakra-ui/react";
+import { useGetPetByFilterQuery } from "@app/services/pet";
+import { useAppSelector } from "@lib/hooks";
 
 const Pet = () => {
-  const [pets, setPets] = useState<PetDataType[]>([]);
-  useEffect(() => {
-    const fetchPetData = async () => {
-      const res = await fetch(
-        "https://data.moa.gov.tw/Service/OpenData/TransService.aspx?UnitId=QcbUEzN6E6DL&$top=18&$skip=0"
-      );
-      setPets(await res.json());
-    };
-    fetchPetData();
-  }, []);
-
+  const { filter } = useAppSelector(state => state.pet);
+  const { data } = useGetPetByFilterQuery({ ...filter });
   return (
     <Grid className={styles.petSection}>
-      {pets.length &&
-        pets.map(pet => (
+      {data &&
+        data.map(pet => (
           <PetCard
             key={pet.animal_id}
             img={pet.album_file}

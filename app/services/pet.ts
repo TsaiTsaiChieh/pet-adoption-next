@@ -10,7 +10,7 @@ export const petApi = createApi({
       query: ({ kind }) => {
         const baseUrl = process.env.NEXT_PUBLIC_API;
         let url = `${baseUrl}&$top=18&$skip=0`;
-        if (kind) url += `&${kind}`;
+        if (kind) url += `&animal_kind=${kind}`;
         return { url, method: "GET" };
       },
     }),
