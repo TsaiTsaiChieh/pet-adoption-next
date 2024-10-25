@@ -4,6 +4,7 @@ import localFont from "next/font/local";
 import Navbar from "./components/Navbar/Navbar";
 import Footer from "./components/Footer/Footer";
 import { ChakraProvider } from "@chakra-ui/react";
+import StoreProvider from "./StoreProvider";
 
 const geistSans = localFont({
   src: "./fonts/GeistVF.woff",
@@ -32,11 +33,13 @@ export default function RootLayout({
         className={`${geistSans.variable} ${geistMono.variable}`}
         suppressHydrationWarning={true}
       >
-        <ChakraProvider>
-          <Navbar />
-          {children}
-          <Footer />
-        </ChakraProvider>
+        <StoreProvider>
+          <ChakraProvider>
+            <Navbar />
+            {children}
+            <Footer />
+          </ChakraProvider>
+        </StoreProvider>
       </body>
     </html>
   );
