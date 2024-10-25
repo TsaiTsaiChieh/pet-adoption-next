@@ -2,7 +2,9 @@ type PetSexType = "F" | "M" | "N";
 type PetAgeType = "CHILD" | "ADULT";
 type PetBodyType = "SMALL" | "MEDIUM" | "BIG";
 type PetStatusType = "unknown" | "open" | "adopted" | "other" | "dead";
-
+type PetFilterType = {
+  kind?: string;
+};
 type PetDataType = {
   animal_id: number;
   animal_subid: string;
