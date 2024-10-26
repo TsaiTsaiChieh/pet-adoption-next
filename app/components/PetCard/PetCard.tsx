@@ -91,7 +91,17 @@ const PetCard = ({
           <Collapse startingHeight={40} className={styles.petCard__remark}>
             {genDetail}
           </Collapse>
-          <Button className={styles.petCard__adoptButton}>領養我</Button>
+          <Button className={styles.petCard__adoptButton}>
+            <a
+              className={styles.petCard__adoptLink}
+              target='_blank'
+              href={`https://www.pet.gov.tw/AnimalApp/AnnounceSingle.aspx?PageType=Adopt&AcNum=${Buffer.from(
+                subId
+              ).toString("base64")}&UT=TEFBQUc=`}
+            >
+              領養我
+            </a>
+          </Button>
         </Box>
       </Box>
     </Skeleton>

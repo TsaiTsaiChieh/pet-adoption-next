@@ -90,9 +90,17 @@
   height: 20px;
 }
 
+.petCard__adoptLink
+{
+  display: flex;
+  height: 100%;
+  width: 100%;
+  justify-content: center;
+  align-items: center;
+}
+
 .petCard__adoptButton
 {
-  padding: 2px;
   background: var(--primary-color) !important;
   color: white !important;
   letter-spacing: 1.5px;
