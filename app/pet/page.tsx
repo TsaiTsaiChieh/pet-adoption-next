@@ -7,12 +7,14 @@ import { useAppSelector } from "@lib/hooks";
 
 const Pet = () => {
   const { filter } = useAppSelector(state => state.pet);
-  const { data } = useGetPetByFilterQuery({ ...filter });
+  const { data, isLoading, isFetching } = useGetPetByFilterQuery({ ...filter });
+
   return (
     <Grid className={styles.petSection}>
       {data &&
         data.map(pet => (
           <PetCard
+            isLoading={isLoading || isFetching}
             key={pet.animal_id}
             img={pet.album_file}
             id={pet.animal_id}

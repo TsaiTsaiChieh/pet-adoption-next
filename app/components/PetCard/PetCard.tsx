@@ -1,4 +1,12 @@
-import { Box, Image, Flex, Divider, Collapse, Button } from "@chakra-ui/react";
+import {
+  Box,
+  Image,
+  Flex,
+  Divider,
+  Collapse,
+  Button,
+  Skeleton,
+} from "@chakra-ui/react";
 import styles from "./PetCard.module.scss";
 import { MdPlace } from "react-icons/md";
 import LabelBox from "../LabelBox/LabelBox";
@@ -11,6 +19,7 @@ import {
 } from "@app/utils/converter";
 
 interface Props {
+  isLoading: boolean;
   id: number;
   subId: string;
   kind: string;
@@ -27,6 +36,7 @@ interface Props {
   sterilization: TernaryType;
 }
 const PetCard = ({
+  isLoading,
   id,
   subId,
   // kind,
@@ -53,36 +63,38 @@ const PetCard = ({
     sterilization
   )}絕育`;
   return (
-    <Box className={styles.petCard}>
-      <Image
-        src={img === "" ? "/imgs/no-pic.svg" : img}
-        alt={id.toString()}
-        className={styles.petCard__avatar}
-      />
+    <Skeleton isLoaded={!isLoading}>
+      <Box className={styles.petCard}>
+        <Image
+          src={img === "" ? "/imgs/no-pic.svg" : img}
+          alt={id.toString()}
+          className={styles.petCard__avatar}
+        />
 
-      <Box className={styles.petCard__desc}>
-        <span className={styles.petCard__title}>{subId}</span>
-        <Flex className={styles.petCard__placeWrap}>
-          <MdPlace className={styles.petCard__placeIcon} />
-          <span className={styles.petCard__placeText}>{place}</span>
-        </Flex>
+        <Box className={styles.petCard__desc}>
+          <span className={styles.petCard__title}>{subId}</span>
+          <Flex className={styles.petCard__placeWrap}>
+            <MdPlace className={styles.petCard__placeIcon} />
+            <span className={styles.petCard__placeText}>{place}</span>
+          </Flex>
 
-        <Flex className={styles.petCard__detailWrap}>
-          {details.map(ele => (
-            <LabelBox key={ele.label} label={ele.label} value={ele.value} />
-          ))}
-        </Flex>
+          <Flex className={styles.petCard__detailWrap}>
+            {details.map(ele => (
+              <LabelBox key={ele.label} label={ele.label} value={ele.value} />
+            ))}
+          </Flex>
 
-        <Box>
-          <Shelter place={place} phone={phone} address={address} />
+          <Box>
+            <Shelter place={place} phone={phone} address={address} />
+          </Box>
+          <Divider />
+          <Collapse startingHeight={40} className={styles.petCard__remark}>
+            {genDetail}
+          </Collapse>
+          <Button className={styles.petCard__adoptButton}>領養我</Button>
         </Box>
-        <Divider />
-        <Collapse startingHeight={40} className={styles.petCard__remark}>
-          {genDetail}
-        </Collapse>
-        <Button className={styles.petCard__adoptButton}>領養我</Button>
       </Box>
-    </Box>
+    </Skeleton>
   );
 };
 
