@@ -63,7 +63,7 @@ const PetCard = ({
     sterilization
   )}絕育`;
   return (
-    <Skeleton isLoaded={!isLoading}>
+    <Skeleton isLoaded={!isLoading} className={styles.loading}>
       <Box className={styles.petCard}>
         <Image
           src={img === "" ? "/imgs/no-pic.svg" : img}

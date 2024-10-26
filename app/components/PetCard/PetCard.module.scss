@@ -1,6 +1,12 @@
 @import "@styles/mixin.scss";
 
 
+.loading
+{
+  border-radius: 10px !important;
+  box-shadow: 4px 8px 15px rgba(0, 0, 0, 0.15) !important;
+}
+
 .petCard
 {
   width: 80vw;
