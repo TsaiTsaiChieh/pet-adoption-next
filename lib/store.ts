@@ -1,11 +1,13 @@
 import { configureStore } from "@reduxjs/toolkit";
 import petReducer from "@app/features/petSlice";
+import drawerReducer from "@app/features/drawerSlice";
 import { petApi } from "@app/services/pet";
 
 export const makeStore = () => {
   return configureStore({
     reducer: {
       pet: petReducer,
+      drawer: drawerReducer,
       [petApi.reducerPath]: petApi.reducer,
     },
     middleware: getDefaultMiddleware =>

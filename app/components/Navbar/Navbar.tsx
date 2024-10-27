@@ -8,15 +8,23 @@ import { LuCat } from "react-icons/lu";
 import { LuDog } from "react-icons/lu";
 import { queryPet } from "@app/features/petSlice";
 import { useAppDispatch } from "@lib/hooks";
+import { toggleDrawer } from "@app/features/drawerSlice";
+import { ReactElement } from "react";
+import CompositeFilter from "../CompositeFilter/CompositeFilter";
 
 const Navbar = () => {
   const dispatch = useAppDispatch();
 
   const iconSize = 28;
-  const BUTTON_SETTING = [
+  const BUTTON_SETTING: {
+    label: string;
+    icon: ReactElement;
+    onClick: () => void;
+  }[] = [
     {
       label: "搜尋",
       icon: <MdFilterAlt size={iconSize} />,
+      onClick: () => dispatch(toggleDrawer()),
     },
     {
       label: "全部",
@@ -37,6 +45,7 @@ const Navbar = () => {
 
   return (
     <Flex className={styles.nav}>
+      <CompositeFilter />
       <Center className={styles.nav__iconContent}>
         <MdPets size={30} />
         <Heading className={styles.nav__title}>PET ADOPTION</Heading>
@@ -48,6 +57,7 @@ const Navbar = () => {
             className={styles.nav__button}
             aria-label={BUTTON_SETTING[0].label}
             leftIcon={BUTTON_SETTING[0].icon}
+            onClick={BUTTON_SETTING[0].onClick}
           >
             {BUTTON_SETTING[0].label}
           </Button>
