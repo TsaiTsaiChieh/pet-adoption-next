@@ -12,3 +12,15 @@
 // {
 //   outline: 1px solid red;
 // }
+
+.primary-btn
+{
+  letter-spacing: 1.5px;
+  color: white !important;
+  background: var(--primary-color) !important;
+
+  &:hover
+  {
+    opacity: 0.8;
+  }
+}

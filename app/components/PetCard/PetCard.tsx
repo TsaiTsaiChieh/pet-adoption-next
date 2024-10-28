@@ -91,7 +91,7 @@ const PetCard = ({
           <Collapse startingHeight={40} className={styles.petCard__remark}>
             {genDetail}
           </Collapse>
-          <Button className={styles.petCard__adoptButton}>
+          <Button className='primary-btn'>
             <a
               className={styles.petCard__adoptLink}
               target='_blank'
