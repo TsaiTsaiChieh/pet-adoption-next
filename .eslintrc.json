@@ -1,7 +1,11 @@
 {
+  "plugins": [
+    "unused-imports"
+  ],
   "extends": [
     "next/core-web-vitals",
-    "next/typescript"
+    "next/typescript",
+    "eslint:recommended"
   ],
   "rules": {
     "@typescript-eslint/no-unused-vars": [
@@ -9,6 +13,7 @@
       {
         "argsIgnorePattern": "^_"
       }
-    ]
+    ],
+    "unused-imports/no-unused-imports": "error"
   }
 }
