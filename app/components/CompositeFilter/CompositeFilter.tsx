@@ -1,18 +1,30 @@
+import styles from "./CompositeFilter.module.scss";
 import { toggleDrawer } from "@app/features/drawerSlice";
 import {
+  Button,
   Drawer,
   DrawerBody,
   DrawerCloseButton,
   DrawerContent,
+  DrawerFooter,
   DrawerHeader,
   DrawerOverlay,
 } from "@chakra-ui/react";
 import { useAppDispatch, useAppSelector } from "@lib/hooks";
+import Selector from "../Selector/Selector";
+import { queryPet, updateTmpFilterByField } from "@app/features/petSlice";
+import { areaOptions } from "@app/utils/options";
 
 const CompositeFilter = () => {
   const dispatch = useAppDispatch();
+  const { filter, tmpFilter } = useAppSelector(state => state.pet);
   const { isOpen } = useAppSelector(state => state.drawer);
   const onClose = () => {
+    dispatch(toggleDrawer());
+  };
+
+  const handleSearch = () => {
+    dispatch(queryPet(tmpFilter));
     dispatch(toggleDrawer());
   };
 
@@ -23,7 +35,19 @@ const CompositeFilter = () => {
         <DrawerCloseButton />
         <DrawerBody>
           <DrawerHeader>搜尋條件</DrawerHeader>
+          <Selector
+            currVal={tmpFilter.area}
+            field='area'
+            options={areaOptions}
+            reducer={updateTmpFilterByField}
+          />
         </DrawerBody>
+        <DrawerFooter className={styles.drawer__footer}>
+          <Button className={styles.drawer__clearBtn}>清除條件</Button>
+          <Button className='primary-btn' onClick={handleSearch}>
+            搜尋
+          </Button>
+        </DrawerFooter>
       </DrawerContent>
     </Drawer>
   );

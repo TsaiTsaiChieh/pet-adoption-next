@@ -4,6 +4,7 @@ type PetBodyType = "SMALL" | "MEDIUM" | "BIG";
 type PetStatusType = "unknown" | "open" | "adopted" | "other" | "dead";
 type PetFilterType = {
   kind?: string;
+  area?: string;
 };
 type PetDataType = {
   animal_id: number;

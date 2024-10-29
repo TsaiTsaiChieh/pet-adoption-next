@@ -13,9 +13,7 @@ export const drawerSlice = createSlice({
   initialState,
   reducers: {
     toggleDrawer: state => {
-      console.log("toggle");
       state.isOpen = !state.isOpen;
-      console.log(state.isOpen);
     },
   },
 });
