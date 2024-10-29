@@ -17,7 +17,7 @@ import { areaOptions } from "@app/utils/options";
 
 const CompositeFilter = () => {
   const dispatch = useAppDispatch();
-  const { filter, tmpFilter } = useAppSelector(state => state.pet);
+  const { tmpFilter } = useAppSelector(state => state.pet);
   const { isOpen } = useAppSelector(state => state.drawer);
   const onClose = () => {
     dispatch(toggleDrawer());
@@ -27,7 +27,6 @@ const CompositeFilter = () => {
     dispatch(queryPet(tmpFilter));
     dispatch(toggleDrawer());
   };
-
   return (
     <Drawer isOpen={isOpen} placement='left' onClose={onClose}>
       <DrawerOverlay />
