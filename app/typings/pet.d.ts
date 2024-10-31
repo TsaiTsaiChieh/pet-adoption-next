@@ -5,6 +5,7 @@ type PetStatusType = "unknown" | "open" | "adopted" | "other" | "dead";
 type PetFilterType = {
   kind?: string;
   area?: string;
+  shelter?: string;
 };
 type PetDataType = {
   animal_id: number;

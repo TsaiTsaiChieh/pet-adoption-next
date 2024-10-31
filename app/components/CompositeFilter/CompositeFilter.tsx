@@ -13,7 +13,7 @@ import {
 import { useAppDispatch, useAppSelector } from "@lib/hooks";
 import Selector from "../Selector/Selector";
 import { queryPet, updateTmpFilterByField } from "@app/features/petSlice";
-import { areaOptions } from "@app/utils/options";
+import { areaOptions, shelterOptions } from "@app/utils/options";
 
 const CompositeFilter = () => {
   const dispatch = useAppDispatch();
@@ -35,9 +35,19 @@ const CompositeFilter = () => {
         <DrawerBody>
           <DrawerHeader>搜尋條件</DrawerHeader>
           <Selector
+            placeholder='請選擇縣市'
+            label='縣市'
             currVal={tmpFilter.area}
             field='area'
             options={areaOptions}
+            reducer={updateTmpFilterByField}
+          />
+          <Selector
+            placeholder='請選擇收容所'
+            label='收容所'
+            currVal={tmpFilter.shelter}
+            field='shelter'
+            options={shelterOptions}
             reducer={updateTmpFilterByField}
           />
         </DrawerBody>
