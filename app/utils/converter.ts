@@ -41,3 +41,14 @@ export const ternaryConverter = (str: TernaryType) => {
       return "無法確認是否已";
   }
 };
+
+export const kindConverter = (kind: string): string => {
+  switch (kind) {
+    case "狗":
+      return "汪";
+    case "貓":
+      return "喵";
+    default:
+      return kind;
+  }
+};

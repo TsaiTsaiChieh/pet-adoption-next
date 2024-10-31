@@ -15,9 +15,11 @@ import Shelter from "../Shelter/Shelter";
 import {
   ageConverter,
   bodyConverter,
+  kindConverter,
   sexConverter,
   ternaryConverter,
 } from "@app/utils/converter";
+import { textClearUp } from "@app/utils/utils";
 
 interface Props {
   isLoading: boolean;
@@ -40,7 +42,7 @@ const PetCard = ({
   isLoading,
   id,
   subId,
-  // kind,
+  kind,
   sex,
   color,
   place,
@@ -58,11 +60,14 @@ const PetCard = ({
     { label: "年齡", value: ageConverter(age) },
     { label: "顏色", value: color },
   ];
-  const genDetail = `${remark ? `${remark}；` : ""}體型為${bodyConverter(
-    bodyType
-  )}；${ternaryConverter(bacterin)}施打狂犬病疫苗；${ternaryConverter(
-    sterilization
-  )}絕育`;
+  const petBody = bodyConverter(bodyType);
+  const petKind = kindConverter(kind);
+  const title = `${textClearUp(color)}${petBody}${petKind}`;
+  const genDetail = `${
+    remark ? `${remark}；` : ""
+  }體型為${petBody}；${ternaryConverter(
+    bacterin
+  )}施打狂犬病疫苗；${ternaryConverter(sterilization)}絕育`;
   return (
     <ScaleFade in={!isLoading} initialScale={0.95}>
       <Skeleton isLoaded={!isLoading} className={styles.loading}>
@@ -74,7 +79,7 @@ const PetCard = ({
           />
 
           <Box className={styles.petCard__desc}>
-            <span className={styles.petCard__title}>{subId}</span>
+            <span className={styles.petCard__title}>{title}</span>
             <Flex className={styles.petCard__placeWrap}>
               <MdPlace className={styles.petCard__placeIcon} />
               <span className={styles.petCard__placeText}>{place}</span>
