@@ -17,7 +17,8 @@ import {
   bodyConverter,
   kindConverter,
   sexConverter,
-  ternaryConverter,
+  ternaryDetailConverter,
+  ternarySimpleConverter,
 } from "@app/utils/converter";
 import { textClearUp } from "@app/utils/utils";
 
@@ -58,16 +59,14 @@ const PetCard = ({
   const details = [
     { label: "性別", value: sexConverter(sex) },
     { label: "年齡", value: ageConverter(age) },
-    { label: "顏色", value: color },
+    { label: "結育", value: ternarySimpleConverter(sterilization) },
   ];
   const petBody = bodyConverter(bodyType);
   const petKind = kindConverter(kind);
   const title = `${textClearUp(color)}${petBody}${petKind}`;
-  const genDetail = `${
-    remark ? `${remark}；` : ""
-  }體型為${petBody}；${ternaryConverter(
+  const genDetail = `${remark ? `${remark} ` : ""}${ternaryDetailConverter(
     bacterin
-  )}施打狂犬病疫苗；${ternaryConverter(sterilization)}絕育`;
+  )}施打疫苗`;
   return (
     <ScaleFade in={!isLoading} initialScale={0.95}>
       <Skeleton isLoaded={!isLoading} className={styles.loading}>
