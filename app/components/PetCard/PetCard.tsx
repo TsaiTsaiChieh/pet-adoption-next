@@ -6,6 +6,7 @@ import {
   Collapse,
   Button,
   Skeleton,
+  ScaleFade,
 } from "@chakra-ui/react";
 import styles from "./PetCard.module.scss";
 import { MdPlace } from "react-icons/md";
@@ -63,48 +64,50 @@ const PetCard = ({
     sterilization
   )}絕育`;
   return (
-    <Skeleton isLoaded={!isLoading} className={styles.loading}>
-      <Box className={styles.petCard}>
-        <Image
-          src={img === "" ? "/imgs/no-pic.svg" : img}
-          alt={id.toString()}
-          className={styles.petCard__avatar}
-        />
+    <ScaleFade in={!isLoading} initialScale={0.95}>
+      <Skeleton isLoaded={!isLoading} className={styles.loading}>
+        <Box className={styles.petCard}>
+          <Image
+            src={img === "" ? "/imgs/no-pic.svg" : img}
+            alt={id.toString()}
+            className={styles.petCard__avatar}
+          />
 
-        <Box className={styles.petCard__desc}>
-          <span className={styles.petCard__title}>{subId}</span>
-          <Flex className={styles.petCard__placeWrap}>
-            <MdPlace className={styles.petCard__placeIcon} />
-            <span className={styles.petCard__placeText}>{place}</span>
-          </Flex>
+          <Box className={styles.petCard__desc}>
+            <span className={styles.petCard__title}>{subId}</span>
+            <Flex className={styles.petCard__placeWrap}>
+              <MdPlace className={styles.petCard__placeIcon} />
+              <span className={styles.petCard__placeText}>{place}</span>
+            </Flex>
 
-          <Flex className={styles.petCard__detailWrap}>
-            {details.map(ele => (
-              <LabelBox key={ele.label} label={ele.label} value={ele.value} />
-            ))}
-          </Flex>
+            <Flex className={styles.petCard__detailWrap}>
+              {details.map(ele => (
+                <LabelBox key={ele.label} label={ele.label} value={ele.value} />
+              ))}
+            </Flex>
 
-          <Box>
-            <Shelter place={place} phone={phone} address={address} />
+            <Box>
+              <Shelter place={place} phone={phone} address={address} />
+            </Box>
+            <Divider />
+            <Collapse startingHeight={40} className={styles.petCard__remark}>
+              {genDetail}
+            </Collapse>
+            <Button className='primary-btn'>
+              <a
+                className={styles.petCard__adoptLink}
+                target='_blank'
+                href={`https://www.pet.gov.tw/AnimalApp/AnnounceSingle.aspx?PageType=Adopt&AcNum=${Buffer.from(
+                  subId
+                ).toString("base64")}&UT=TEFBQUc=`}
+              >
+                領養我
+              </a>
+            </Button>
           </Box>
-          <Divider />
-          <Collapse startingHeight={40} className={styles.petCard__remark}>
-            {genDetail}
-          </Collapse>
-          <Button className='primary-btn'>
-            <a
-              className={styles.petCard__adoptLink}
-              target='_blank'
-              href={`https://www.pet.gov.tw/AnimalApp/AnnounceSingle.aspx?PageType=Adopt&AcNum=${Buffer.from(
-                subId
-              ).toString("base64")}&UT=TEFBQUc=`}
-            >
-              領養我
-            </a>
-          </Button>
         </Box>
-      </Box>
-    </Skeleton>
+      </Skeleton>
+    </ScaleFade>
   );
 };
 
