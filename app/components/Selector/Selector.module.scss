@@ -1,0 +1,22 @@
+.selectorWrap
+{
+  flex-direction: column;
+}
+
+.selectorWrap__label
+{
+  font-size: 16px;
+  font-weight: bold;
+  margin-bottom: 2px;
+  margin-left: 2px;
+  letter-spacing: 1.5px;
+}
+
+.selectorWrap__selector
+{
+  &:focus
+  {
+    border-color: var(--primary-color) !important;
+    box-shadow: none !important;
+  }
+}
