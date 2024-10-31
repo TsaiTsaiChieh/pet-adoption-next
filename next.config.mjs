@@ -1,21 +1,24 @@
 /** @type {import('next').NextConfig} */
-import path from 'path';
-import { fileURLToPath } from 'url';
+import path from "path";
+import { fileURLToPath } from "url";
 
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = path.dirname(__filename);
 
 const nextConfig = {
+  reactStrictMode: true,
   async redirects() {
-  return [{
-    source: '/',
-    destination: '/pet',
-    permanent: true
-  }]
-},
-sassOptions: {
-  includePaths:  [path.join(__dirname, 'styles')],
-}
+    return [
+      {
+        source: "/",
+        destination: "/pet",
+        permanent: true,
+      },
+    ];
+  },
+  sassOptions: {
+    includePaths: [path.join(__dirname, "styles")],
+  },
 };
 
 export default nextConfig;
