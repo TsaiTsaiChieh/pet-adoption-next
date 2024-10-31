@@ -34,9 +34,9 @@ const Selector = ({
         className={styles.selectorWrap__selector}
         size='md'
         onChange={handleSelectChange}
-        value={currVal}
+        value={currVal ?? ""}
       >
-        <option label={placeholder} key={undefined} hidden={true} />
+        <option label={placeholder} value='' key='' hidden />
         {options.map(ele => (
           <option key={ele.label} value={ele.value}>
             {ele.label}

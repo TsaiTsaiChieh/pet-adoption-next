@@ -33,10 +33,17 @@ export const petSlice = createSlice({
       state.tmpFilter = action.payload;
       state.filter = action.payload;
     },
+    resetTmpFilter: state => {
+      state.tmpFilter = initialState.tmpFilter
+    },
   },
 });
 
-export const { initPetFilter, updateTmpFilterByField, queryPet } =
-  petSlice.actions;
+export const {
+  initPetFilter,
+  updateTmpFilterByField,
+  queryPet,
+  resetTmpFilter,
+} = petSlice.actions;
 
 export default petSlice.reducer;

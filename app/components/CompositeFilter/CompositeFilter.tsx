@@ -12,7 +12,11 @@ import {
 } from "@chakra-ui/react";
 import { useAppDispatch, useAppSelector } from "@lib/hooks";
 import Selector from "../Selector/Selector";
-import { queryPet, updateTmpFilterByField } from "@app/features/petSlice";
+import {
+  queryPet,
+  resetTmpFilter,
+  updateTmpFilterByField,
+} from "@app/features/petSlice";
 import { areaOptions, shelterOptions } from "@app/utils/options";
 
 const CompositeFilter = () => {
@@ -26,6 +30,9 @@ const CompositeFilter = () => {
   const handleSearch = () => {
     dispatch(queryPet(tmpFilter));
     dispatch(toggleDrawer());
+  };
+  const handleClear = () => {
+    dispatch(resetTmpFilter());
   };
   return (
     <Drawer isOpen={isOpen} placement='left' onClose={onClose}>
@@ -52,7 +59,9 @@ const CompositeFilter = () => {
           />
         </DrawerBody>
         <DrawerFooter className={styles.drawer__footer}>
-          <Button className={styles.drawer__clearBtn}>清除條件</Button>
+          <Button className={styles.drawer__clearBtn} onClick={handleClear}>
+            清除條件
+          </Button>
           <Button className='primary-btn' onClick={handleSearch}>
             搜尋
           </Button>
