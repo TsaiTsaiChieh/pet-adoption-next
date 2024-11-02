@@ -1,7 +1,6 @@
 import styles from "./PetCard.module.scss";
 import {
   Box,
-  Image,
   Flex,
   Divider,
   Collapse,
@@ -21,6 +20,7 @@ import {
   ternarySimpleConverter,
 } from "@app/utils/converter";
 import { textClearUp } from "@app/utils/utils";
+import Avatar from "../pet/Avatar/Avatar";
 
 interface Props {
   isLoading: boolean;
@@ -71,12 +71,7 @@ const PetCard = ({
     <Skeleton isLoaded={!isLoading} className={styles.loading}>
       <ScaleFade in={!isLoading} initialScale={0.95}>
         <Box className={styles.petCard}>
-          <Image
-            src={img === "" ? "/imgs/no-pic.svg" : img}
-            alt={id.toString()}
-            className={styles.petCard__avatar}
-          />
-
+          <Avatar src={img} alt={id} />
           <Box className={styles.petCard__desc}>
             <span className={styles.petCard__title}>{title}</span>
             <Flex className={styles.petCard__placeWrap}>

@@ -1,6 +1,5 @@
 @import "@styles/mixin.scss";
 
-
 .loading
 {
   border-radius: 10px !important;
@@ -31,26 +30,6 @@
     width: 24vw;
   }
 }
-
-.petCard__avatar
-{
-  width: 94%;
-  height: 300px;
-  margin: 10px auto;
-  object-fit: cover;
-  border-radius: 10px;
-
-  @include respond-to(pad)
-  {
-    height: 400px;
-  }
-
-  @include respond-to(desktop)
-  {
-    width: 90%;
-  }
-}
-
 
 .petCard__desc
 {
