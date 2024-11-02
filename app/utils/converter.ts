@@ -35,7 +35,7 @@ export const ternaryDetailConverter = (str: TernaryType) => {
   switch (str) {
     case "T":
       return "有";
-    case "N":
+    case "F":
       return "未";
     default:
       return "無法確認是否已";
@@ -45,7 +45,7 @@ export const ternarySimpleConverter = (str: TernaryType) => {
   switch (str) {
     case "T":
       return "有";
-    case "N":
+    case "F":
       return "無";
     default:
       return "未知";

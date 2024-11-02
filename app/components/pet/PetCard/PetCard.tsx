@@ -38,6 +38,7 @@ interface Props {
   bodyType: PetBodyType;
   bacterin: TernaryType;
   sterilization: TernaryType;
+  updateDate: string;
 }
 const PetCard = ({
   isLoading,
@@ -55,6 +56,7 @@ const PetCard = ({
   bodyType,
   bacterin,
   sterilization,
+  updateDate,
 }: Props) => {
   const details = [
     { label: "性別", value: sexConverter(sex) },
@@ -64,9 +66,10 @@ const PetCard = ({
   const petBody = bodyConverter(bodyType);
   const petKind = kindConverter(kind);
   const title = `${textClearUp(color)}${petBody}${petKind}`;
-  const genDetail = `${remark ? `${remark} ` : ""}${ternaryDetailConverter(
-    bacterin
-  )}施打疫苗`;
+  const genDetail = `${updateDate} 更新。${remark} ${
+    bacterin !== "N" ? `${ternaryDetailConverter(bacterin)}打疫苗` : ""
+  }`;
+
   return (
     <Skeleton isLoaded={!isLoading} className={styles.loading}>
       <ScaleFade in={!isLoading} initialScale={0.95}>
