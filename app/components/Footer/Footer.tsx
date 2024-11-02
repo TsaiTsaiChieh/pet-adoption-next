@@ -28,6 +28,9 @@ const Footer = () => {
           <span className={styles.footer__warning}>
             本網站僅提供寵物資訊的檢索服務，不對其正確性或即時性負責，亦對認養等相關爭議或損失概不負責。
           </span>
+          <span>
+            版本 {process.env.NEXT_PUBLIC_BUILD_DATE?.substring(0, 10)}
+          </span>
         </Flex>
       </Flex>
     </footer>
