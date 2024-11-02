@@ -1,5 +1,5 @@
-import { Image } from "@chakra-ui/react";
 import styles from "./PetNotFound.module.scss";
+import { Image } from "@chakra-ui/react";
 
 const PetNotFound = () => {
   return (

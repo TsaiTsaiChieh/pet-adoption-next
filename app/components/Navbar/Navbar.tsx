@@ -1,5 +1,5 @@
-import { MdPets } from "react-icons/md";
 import styles from "./Navbar.module.scss";
+import { MdPets } from "react-icons/md";
 import { Center, Flex, Heading } from "@chakra-ui/react";
 import CompositeFilter from "../CompositeFilter/CompositeFilter";
 

@@ -1,8 +1,8 @@
+import styles from "./Selector.module.scss";
 import { Flex, Select } from "@chakra-ui/react";
 import { useAppDispatch } from "@lib/hooks";
 import { ActionCreatorWithPayload } from "@reduxjs/toolkit";
 import { ChangeEvent } from "react";
-import styles from "./Selector.module.scss";
 interface Props {
   placeholder?: string;
   label?: string;

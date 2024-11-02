@@ -1,5 +1,5 @@
-import { Flex } from "@chakra-ui/react";
 import styles from "./Footer.module.scss";
+import { Flex } from "@chakra-ui/react";
 import { FaGithubAlt } from "react-icons/fa";
 
 const Footer = () => {

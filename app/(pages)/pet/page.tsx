@@ -1,6 +1,6 @@
 "use client";
-import PetCard from "@app/components/PetCard/PetCard";
 import styles from "./page.module.scss";
+import PetCard from "@app/components/PetCard/PetCard";
 import { Grid } from "@chakra-ui/react";
 import { useGetPetByFilterQuery } from "@app/services/pet";
 import { useAppSelector } from "@lib/hooks";

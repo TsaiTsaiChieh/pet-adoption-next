@@ -1,5 +1,5 @@
-import { Flex, Text } from "@chakra-ui/react";
 import styles from "./LabelBox.module.scss";
+import { Flex, Text } from "@chakra-ui/react";
 
 interface Props {
   label: string;

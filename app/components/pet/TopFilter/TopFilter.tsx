@@ -1,6 +1,6 @@
 "use clinent";
-import { Button, Flex } from "@chakra-ui/react";
 import styles from "./TopFilter.module.scss";
+import { Button, Flex } from "@chakra-ui/react";
 import { ReactElement, useEffect, useState } from "react";
 import { useAppDispatch } from "@lib/hooks";
 import { LuDog, LuCat } from "react-icons/lu";

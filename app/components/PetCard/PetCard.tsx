@@ -1,3 +1,4 @@
+import styles from "./PetCard.module.scss";
 import {
   Box,
   Image,
@@ -8,7 +9,6 @@ import {
   Skeleton,
   ScaleFade,
 } from "@chakra-ui/react";
-import styles from "./PetCard.module.scss";
 import { MdPlace } from "react-icons/md";
 import LabelBox from "../LabelBox/LabelBox";
 import Shelter from "../Shelter/Shelter";
