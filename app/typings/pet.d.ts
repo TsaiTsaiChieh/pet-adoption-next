@@ -6,6 +6,7 @@ type PetFilterType = {
   kind?: string;
   area?: string;
   shelter?: string;
+  page: number;
 };
 type PetDataType = {
   animal_id: number;

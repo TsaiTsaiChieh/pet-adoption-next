@@ -9,8 +9,8 @@ export interface PetState {
 
 const initialState: PetState = {
   data: [],
-  tmpFilter: {},
-  filter: {},
+  tmpFilter: { page: 1 },
+  filter: { page: 1 },
 };
 
 export const petSlice = createSlice({
@@ -34,7 +34,7 @@ export const petSlice = createSlice({
       state.filter = action.payload;
     },
     resetTmpFilter: state => {
-      state.tmpFilter = initialState.tmpFilter
+      state.tmpFilter = initialState.tmpFilter;
     },
   },
 });

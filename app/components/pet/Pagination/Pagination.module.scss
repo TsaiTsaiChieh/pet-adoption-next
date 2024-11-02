@@ -1,0 +1,40 @@
+@import "@styles/mixin";
+
+.paginator
+{
+  width: 85%;
+  margin: 50px auto;
+  justify-content: center;
+  gap: 24px;
+
+  @include respond-to(pad)
+  {
+    max-width: 80%;
+  }
+
+  @include respond-to(desktop)
+  {
+    max-width: 75%;
+  }
+}
+
+.paginator__input
+{
+  letter-spacing: 1.5px;
+  width: 80px !important;
+  text-align: center;
+  border-color: var(--primary-color) !important;
+  color: gray;
+
+  &:focus
+  {
+    border-color: var(--primary-color) !important;
+    box-shadow: none !important;
+  }
+}
+
+.paginator__button
+{
+  background: transparent !important;
+  color: var(--primary-color) !important;
+}

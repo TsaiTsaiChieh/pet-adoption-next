@@ -6,6 +6,7 @@ import { useGetPetByFilterQuery } from "@app/services/pet";
 import { useAppSelector } from "@lib/hooks";
 import TopFilter from "@app/components/pet/TopFilter/TopFilter";
 import PetNotFound from "@app/components/PetNotFound/PetNotFound";
+import Pagination from "@app/components/pet/Pagination/Pagination";
 
 const Pet = () => {
   const { filter } = useAppSelector(state => state.pet);
@@ -38,6 +39,7 @@ const Pet = () => {
             />
           ))}
       </Grid>
+      <Pagination />
     </>
   );
 };

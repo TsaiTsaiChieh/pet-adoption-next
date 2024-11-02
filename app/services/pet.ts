@@ -7,9 +7,10 @@ export const petApi = createApi({
   baseQuery: fetchBaseQuery(),
   endpoints: builder => ({
     getPetByFilter: builder.query<PetDataType[], PetFilterType>({
-      query: ({ area, kind, shelter }) => {
+      query: ({ page, area, kind, shelter }) => {
         const baseUrl = process.env.NEXT_PUBLIC_API;
-        let url = `${baseUrl}&$top=18&$skip=0`;
+        const offset = 18;
+        let url = `${baseUrl}&$top=18&$skip=${(page - 1) * offset}`;
         if (kind) url += `&animal_kind=${kind}`;
         if (area) url += `&animal_area_pkid=${area}`;
         if (shelter) url += `&animal_shelter_pkid=${shelter}`;

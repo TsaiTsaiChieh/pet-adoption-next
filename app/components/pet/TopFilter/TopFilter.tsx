@@ -14,6 +14,7 @@ interface Props {
 }
 const TopFilter = ({ isLoading }: Props) => {
   const [showLoading, setShowLoading] = useState(isLoading);
+  const dispatch = useAppDispatch();
   useEffect(() => {
     if (isLoading) setShowLoading(true);
     else {
@@ -21,8 +22,6 @@ const TopFilter = ({ isLoading }: Props) => {
       return () => clearTimeout(timeout);
     }
   }, [isLoading]);
-
-  const dispatch = useAppDispatch();
 
   const iconSize = 28;
   const BUTTON_SETTING: {
@@ -38,17 +37,17 @@ const TopFilter = ({ isLoading }: Props) => {
     {
       label: "全部",
       icon: <RiBearSmileLine size={iconSize} />,
-      onClick: () => dispatch(queryPet({ kind: undefined })),
+      onClick: () => dispatch(queryPet({ kind: undefined, page: 1 })),
     },
     {
       label: "汪汪",
       icon: <LuDog size={iconSize} />,
-      onClick: () => dispatch(queryPet({ kind: "狗" })),
+      onClick: () => dispatch(queryPet({ kind: "狗", page: 1 })),
     },
     {
       label: "喵喵",
       icon: <LuCat size={iconSize} />,
-      onClick: () => dispatch(queryPet({ kind: "貓" })),
+      onClick: () => dispatch(queryPet({ kind: "貓", page: 1 })),
     },
   ];
   return (
