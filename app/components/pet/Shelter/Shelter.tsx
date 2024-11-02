@@ -15,7 +15,7 @@ const Shelter = ({ place, address, phone }: Props) => {
       />
       <Flex className={styles.shelterWrap__detail}>
         <Collapse startingHeight={18} className={styles.shelterWrap__address}>
-          {address.substring(0, 18)}
+          {address.substring(3, 18)}
         </Collapse>
         <Text className={styles.shelterWrap__phone}>{phone}</Text>
       </Flex>
