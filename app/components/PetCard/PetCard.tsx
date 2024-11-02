@@ -68,8 +68,8 @@ const PetCard = ({
     bacterin
   )}施打疫苗`;
   return (
-    <ScaleFade in={!isLoading} initialScale={0.95}>
-      <Skeleton isLoaded={!isLoading} className={styles.loading}>
+    <Skeleton isLoaded={!isLoading} className={styles.loading}>
+      <ScaleFade in={!isLoading} initialScale={0.95}>
         <Box className={styles.petCard}>
           <Image
             src={img === "" ? "/imgs/no-pic.svg" : img}
@@ -110,8 +110,8 @@ const PetCard = ({
             </Button>
           </Box>
         </Box>
-      </Skeleton>
-    </ScaleFade>
+      </ScaleFade>
+    </Skeleton>
   );
 };
 
