@@ -1,0 +1,19 @@
+@import '@styles/mixin';
+
+.petNotFound
+{
+  width: 80vw;
+  height: 60vh;
+  margin: auto;
+
+  @include respond-to(pad)
+  {
+    width: 70vw;
+    height: 90vh;
+  }
+
+  @include respond-to(desktop)
+  {
+    width: 50vw;
+  }
+}
