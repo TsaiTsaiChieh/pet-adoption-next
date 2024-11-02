@@ -1,7 +1,7 @@
 "use clinent";
 import { Button, Flex } from "@chakra-ui/react";
 import styles from "./TopFilter.module.scss";
-import { ReactElement } from "react";
+import { ReactElement, useEffect, useState } from "react";
 import { useAppDispatch } from "@lib/hooks";
 import { LuDog, LuCat } from "react-icons/lu";
 import { MdFilterAlt } from "react-icons/md";
@@ -13,6 +13,15 @@ interface Props {
   isLoading: boolean;
 }
 const TopFilter = ({ isLoading }: Props) => {
+  const [showLoading, setShowLoading] = useState(isLoading);
+  useEffect(() => {
+    if (isLoading) setShowLoading(true);
+    else {
+      const timeout = setTimeout(() => setShowLoading(false), 1500);
+      return () => clearTimeout(timeout);
+    }
+  }, [isLoading]);
+
   const dispatch = useAppDispatch();
 
   const iconSize = 28;
@@ -46,7 +55,7 @@ const TopFilter = ({ isLoading }: Props) => {
     <Flex className={styles.topFilter}>
       <span
         className={`${styles.topFilter__loader} ${
-          isLoading ? styles["topFilter__loader--is-loading"] : ""
+          showLoading ? styles["topFilter__loader--is-loading"] : ""
         }`}
       />
       <Flex className={styles.topFilter__filter}>
