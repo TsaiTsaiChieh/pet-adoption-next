@@ -1,3 +1,4 @@
+"use client";
 import styles from "./CompositeFilter.module.scss";
 import { toggleDrawer } from "@app/features/drawerSlice";
 import {

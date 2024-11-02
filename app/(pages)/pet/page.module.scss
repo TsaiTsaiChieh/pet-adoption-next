@@ -5,20 +5,17 @@
   margin: auto;
   justify-items: center;
   max-width: 85%;
-  // background-color: rgba(255, 247, 0, 0.5);
   gap: 12px;
 
   @include respond-to(pad)
   {
     max-width: 80%;
-    // background: rgba(7, 236, 7, 0.5);
     grid-template-columns: 1fr 1fr;
   }
 
   @include respond-to(desktop)
   {
     max-width: 75%;
-    // background: rgba(54, 54, 243, 0.5);
     grid-template-columns: 1fr 1fr 1fr;
   }
 }
