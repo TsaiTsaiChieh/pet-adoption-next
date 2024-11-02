@@ -9,8 +9,8 @@ import {
   ScaleFade,
 } from "@chakra-ui/react";
 import { MdPlace } from "react-icons/md";
-import LabelBox from "../LabelBox/LabelBox";
-import Shelter from "../Shelter/Shelter";
+import LabelBox from "@app/components/pet/LabelBox/LabelBox";
+import Shelter from "@app/components/pet/Shelter/Shelter";
 import {
   ageConverter,
   bodyConverter,
@@ -20,7 +20,7 @@ import {
   ternarySimpleConverter,
 } from "@app/utils/converter";
 import { textClearUp } from "@app/utils/utils";
-import Avatar from "../pet/Avatar/Avatar";
+import Avatar from "@app/components/pet/Avatar/Avatar";
 
 interface Props {
   isLoading: boolean;

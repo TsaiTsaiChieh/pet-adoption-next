@@ -1,11 +1,11 @@
 "use client";
 import styles from "./page.module.scss";
-import PetCard from "@app/components/PetCard/PetCard";
+import PetCard from "@app/components/pet/PetCard/PetCard";
 import { Grid } from "@chakra-ui/react";
 import { useGetPetByFilterQuery } from "@app/services/pet";
 import { useAppSelector } from "@lib/hooks";
 import TopFilter from "@app/components/pet/TopFilter/TopFilter";
-import PetNotFound from "@app/components/PetNotFound/PetNotFound";
+import PetNotFound from "@app/components/pet/PetNotFound/PetNotFound";
 import Pagination from "@app/components/pet/Pagination/Pagination";
 
 const Pet = () => {

@@ -12,7 +12,7 @@ import {
   DrawerOverlay,
 } from "@chakra-ui/react";
 import { useAppDispatch, useAppSelector } from "@lib/hooks";
-import Selector from "../Selector/Selector";
+import Selector from "@app/components/Selector/Selector";
 import {
   queryPet,
   resetTmpFilter,
