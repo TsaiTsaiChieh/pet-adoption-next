@@ -7,26 +7,33 @@ import { FlatCompat } from "@eslint/eslintrc";
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = path.dirname(__filename);
 const compat = new FlatCompat({
-    baseDirectory: __dirname,
-    recommendedConfig: js.configs.recommended,
-    allConfig: js.configs.all
+  baseDirectory: __dirname,
+  recommendedConfig: js.configs.recommended,
+  allConfig: js.configs.all,
 });
 
-export default [...compat.extends(
+export default [
+  ...compat.extends(
     "next/core-web-vitals",
     "next/typescript",
     "eslint:recommended",
-), {
+    "plugin:react-hooks/recommended"
+  ),
+  {
     plugins: {
-        "unused-imports": unusedImports,
+      "unused-imports": unusedImports,
     },
     files: ["**/*.ts"],
 
     rules: {
-        "@typescript-eslint/no-unused-vars": ["error", {
-            argsIgnorePattern: "^_",
-        }],
+      "@typescript-eslint/no-unused-vars": [
+        "error",
+        {
+          argsIgnorePattern: "^_",
+        },
+      ],
 
-        "unused-imports/no-unused-imports": "error",
+      "unused-imports/no-unused-imports": "error",
     },
-}];
+  },
+];
