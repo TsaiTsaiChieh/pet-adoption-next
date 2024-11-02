@@ -71,7 +71,7 @@ const PetCard = ({
     <Skeleton isLoaded={!isLoading} className={styles.loading}>
       <ScaleFade in={!isLoading} initialScale={0.95}>
         <Box className={styles.petCard}>
-          <Avatar src={img} alt={id} />
+          <Avatar src={img} alt={id.toString()} />
           <Box className={styles.petCard__desc}>
             <span className={styles.petCard__title}>{title}</span>
             <Flex className={styles.petCard__placeWrap}>
