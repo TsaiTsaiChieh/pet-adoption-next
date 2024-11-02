@@ -16,11 +16,11 @@ export default [...compat.extends(
     "next/core-web-vitals",
     "next/typescript",
     "eslint:recommended",
-    "plugin:@typescript-eslint/recommended",
 ), {
     plugins: {
         "unused-imports": unusedImports,
     },
+    files: ["**/*.ts"],
 
     rules: {
         "@typescript-eslint/no-unused-vars": ["error", {
