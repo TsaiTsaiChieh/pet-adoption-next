@@ -9,7 +9,7 @@ const Navbar = () => {
       <CompositeFilter />
       <Center className={styles.nav__iconContent}>
         <Icon src='/icons/pet.svg' size={30} />
-        <Heading className={styles.nav__title}>PET ADOPTION</Heading>
+        <Heading className={styles.nav__title}>浪窩</Heading>
       </Center>
     </Flex>
   );
