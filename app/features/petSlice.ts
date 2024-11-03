@@ -1,5 +1,6 @@
 import { createSlice } from "@reduxjs/toolkit";
 import type { PayloadAction } from "@reduxjs/toolkit";
+import { petApi } from "@app/services/pet";
 
 export interface PetState {
   data: PetDataType[];
@@ -37,6 +38,14 @@ export const petSlice = createSlice({
       state.tmpFilter = initialState.tmpFilter;
     },
   },
+  extraReducers: builer => {
+    builer.addMatcher(
+      petApi.endpoints.getPetByFilter.matchFulfilled,
+      (state, action) => {
+        state.data = action.payload;
+      }
+    );
+  },
 });
 
 export const {
@@ -47,3 +56,4 @@ export const {
 } = petSlice.actions;
 
 export default petSlice.reducer;
+export const setPetData = petSlice.actions;
