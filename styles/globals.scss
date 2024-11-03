@@ -34,3 +34,28 @@
     box-shadow: none;
   }
 }
+
+.secondary-btn
+{
+  letter-spacing: 1.5px;
+  background: white !important;
+  border: 1px solid black !important;
+  color: gray !important;
+
+  &:hover
+  {
+    opacity: 0.8 !important;
+  }
+
+  &:focus-visible
+  {
+    box-shadow: none;
+  }
+
+  &.--is-activated
+  {
+    background: var(--primary-color) !important;
+    color: white !important;
+    border: 1px solid var(--primary-color) !important;
+  }
+}
