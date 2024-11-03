@@ -1,4 +1,4 @@
-import { CityEnum, ShelterEnum } from "@app/typings/enum";
+import { AgeEnum, CityEnum, ShelterEnum } from "@app/typings/enum";
 
 export const areaOptions: OptionsType<number>[] = [
   {
@@ -223,5 +223,16 @@ export const shelterOptions: OptionsType<number>[] = [
   {
     value: ShelterEnum.LNN,
     label: "連江縣流浪犬收容中心",
+  },
+];
+
+export const ageOptions: OptionsType<AgeEnum>[] = [
+  {
+    value: AgeEnum.ADULT,
+    label: "成年",
+  },
+  {
+    value: AgeEnum.CHILD,
+    label: "幼年",
   },
 ];

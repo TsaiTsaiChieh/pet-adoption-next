@@ -58,3 +58,9 @@ export enum ShelterEnum {
   YLH = 89, // 雲林縣流浪動物收容所
   MAL = 96, // 苗栗縣生態保育教育中心
 }
+
+export enum AgeEnum {
+  ALL = "",
+  ADULT = "ADULT",
+  CHILD = "CHILD",
+}
