@@ -7,6 +7,7 @@ import { useAppSelector } from "@lib/hooks";
 import TopFilter from "@app/components/pet/TopFilter/TopFilter";
 import NotFound from "@app/components/pet/NotFound/NotFound";
 import Pagination from "@app/components/pet/Pagination/Pagination";
+import ScrollButton from "@app/components/ScrollButton/ScrollButton";
 
 const Pet = () => {
   const { filter } = useAppSelector(state => state.pet);
@@ -15,6 +16,7 @@ const Pet = () => {
   return (
     <>
       <TopFilter />
+      <ScrollButton />
       {data?.length === 0 && <NotFound />}
       <Grid className={styles.petSection}>
         {data &&

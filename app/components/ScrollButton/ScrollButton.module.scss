@@ -1,0 +1,16 @@
+.button
+{
+  z-index: 100 !important;
+  width: 50px !important;
+  height: 50px !important;
+  position: fixed !important;
+  right: 45px !important;
+  bottom: 70px !important;
+  background: var(--secondary-color) !important;
+}
+
+.icon
+{
+  margin: auto;
+  color: var(--primary-color);
+}
