@@ -6,11 +6,12 @@ interface Props {
   src: string;
   alt?: string;
   size: number;
+  color?: string;
 }
-const Icon = ({ src, alt, size }: Props) => {
+const Icon = ({ src, alt, size, color }: Props) => {
   return (
     <Image
-      className={styles.icon}
+      className={`${styles.icon} ${color ? styles["white"] : ""}`}
       alt={alt ?? "icon"}
       width={size}
       height={size}

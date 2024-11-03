@@ -1,4 +1,9 @@
 .icon
 {
   filter: var(--primary-filter);
+
+  &.white
+  {
+    filter: var(--white-filter);
+  }
 }
