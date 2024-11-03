@@ -14,7 +14,7 @@ const Pet = () => {
 
   return (
     <>
-      <TopFilter isLoading={isLoading || isFetching} />
+      <TopFilter />
       {data?.length === 0 && <PetNotFound />}
       <Grid className={styles.petSection}>
         {data &&

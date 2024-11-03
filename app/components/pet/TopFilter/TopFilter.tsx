@@ -1,7 +1,7 @@
 "use clinent";
 import styles from "./TopFilter.module.scss";
 import { Button, Flex } from "@chakra-ui/react";
-import { ReactElement, useEffect, useState } from "react";
+import { ReactElement } from "react";
 import { useAppDispatch } from "@lib/hooks";
 import { LuDog, LuCat } from "react-icons/lu";
 import { MdFilterAlt } from "react-icons/md";
@@ -9,19 +9,8 @@ import { toggleDrawer } from "@app/features/drawerSlice";
 import { RiBearSmileLine } from "react-icons/ri";
 import { queryPet } from "@app/features/petSlice";
 
-interface Props {
-  isLoading: boolean;
-}
-const TopFilter = ({ isLoading }: Props) => {
-  const [showLoading, setShowLoading] = useState(isLoading);
+const TopFilter = () => {
   const dispatch = useAppDispatch();
-  useEffect(() => {
-    if (isLoading) setShowLoading(true);
-    else {
-      const timeout = setTimeout(() => setShowLoading(false), 1500);
-      return () => clearTimeout(timeout);
-    }
-  }, [isLoading]);
 
   const iconSize = 28;
   const BUTTON_SETTING: {
@@ -52,11 +41,6 @@ const TopFilter = ({ isLoading }: Props) => {
   ];
   return (
     <Flex className={styles.topFilter}>
-      <span
-        className={`${styles.topFilter__loader} ${
-          showLoading ? styles["topFilter__loader--is-loading"] : ""
-        }`}
-      />
       <Flex className={styles.topFilter__filter}>
         <Flex className={styles.topFilter__filterContent}>
           <Button
