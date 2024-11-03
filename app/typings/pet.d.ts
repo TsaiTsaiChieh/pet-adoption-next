@@ -5,6 +5,7 @@ type PetStatusType = "unknown" | "open" | "adopted" | "other" | "dead";
 type PetFilterType = {
   kind?: string;
   age?: string;
+  sex?: string;
   area?: string;
   shelter?: string;
   page: number;

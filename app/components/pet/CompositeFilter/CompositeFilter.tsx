@@ -18,7 +18,12 @@ import {
   resetTmpFilter,
   updateTmpFilterByField,
 } from "@app/features/petSlice";
-import { ageOptions, areaOptions, shelterOptions } from "@app/utils/options";
+import {
+  ageOptions,
+  areaOptions,
+  sexOptions,
+  shelterOptions,
+} from "@app/utils/options";
 import ButtonFilter from "@app/components/pet/ButtonFilter/ButtonFilter";
 
 const CompositeFilter = () => {
@@ -64,6 +69,13 @@ const CompositeFilter = () => {
             currVal={tmpFilter.age}
             field='age'
             options={ageOptions}
+            reducer={updateTmpFilterByField}
+          />
+          <ButtonFilter
+            label='性別'
+            currVal={tmpFilter.sex}
+            field='sex'
+            options={sexOptions}
             reducer={updateTmpFilterByField}
           />
         </DrawerBody>

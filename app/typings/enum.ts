@@ -64,3 +64,9 @@ export enum AgeEnum {
   ADULT = "ADULT",
   CHILD = "CHILD",
 }
+
+export enum SexEnum {
+  ALL = "",
+  FEMALE = "F",
+  MALE = "M",
+}
