@@ -16,10 +16,9 @@ import {
   bodyConverter,
   kindConverter,
   sexConverter,
-  ternaryDetailConverter,
-  ternarySimpleConverter,
+  ternaryConverter,
 } from "@app/utils/converter";
-import { textClearUp } from "@app/utils/utils";
+import { calcDaysSince, textClearUp } from "@app/utils/utils";
 import Avatar from "@app/components/pet/Avatar/Avatar";
 
 interface Props {
@@ -39,6 +38,7 @@ interface Props {
   bacterin: TernaryType;
   sterilization: TernaryType;
   updateDate: string;
+  createDate: string;
 }
 const PetCard = ({
   isLoading,
@@ -59,16 +59,20 @@ const PetCard = ({
   updateDate,
 }: Props) => {
   const details = [
-    { label: "性別", value: sexConverter(sex) },
-    { label: "年齡", value: ageConverter(age) },
-    { label: "結育", value: ternarySimpleConverter(sterilization) },
+    {
+      label: "等待",
+      value: calcDaysSince(updateDate).toString(),
+      prefix: "天",
+    },
+    { label: "疫苗", value: ternaryConverter(bacterin) },
+    { label: "結育", value: ternaryConverter(sterilization) },
   ];
   const petBody = bodyConverter(bodyType);
   const petKind = kindConverter(kind);
-  const title = `${textClearUp(color)}${petBody}${petKind}`;
-  const genDetail = `${updateDate} 更新。${remark} ${
-    bacterin !== "N" ? `${ternaryDetailConverter(bacterin)}打疫苗` : ""
-  }`;
+  const title = `${textClearUp(color)}${petBody}${sexConverter(
+    sex
+  )}的${ageConverter(age)}${petKind}`;
+  const genDetail = `${updateDate} 更新。${remark}`;
 
   return (
     <Skeleton isLoaded={!isLoading} className={styles.loading}>
@@ -84,7 +88,12 @@ const PetCard = ({
 
             <Flex className={styles.petCard__detailWrap}>
               {details.map(ele => (
-                <LabelBox key={ele.label} label={ele.label} value={ele.value} />
+                <LabelBox
+                  key={ele.label}
+                  label={ele.label}
+                  value={ele.value}
+                  prefix={ele.prefix}
+                />
               ))}
             </Flex>
 

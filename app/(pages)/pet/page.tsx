@@ -39,6 +39,7 @@ const Pet = () => {
               bacterin={pet.animal_bacterin}
               sterilization={pet.animal_sterilization}
               updateDate={pet.animal_update}
+              createDate={pet.animal_createtime}
             />
           ))}
       </Grid>

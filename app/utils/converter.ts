@@ -31,17 +31,7 @@ export const bodyConverter = (bodyType: PetBodyType) => {
   }
 };
 
-export const ternaryDetailConverter = (str: TernaryType) => {
-  switch (str) {
-    case "T":
-      return "有";
-    case "F":
-      return "未";
-    default:
-      return "無法確認是否已";
-  }
-};
-export const ternarySimpleConverter = (str: TernaryType) => {
+export const ternaryConverter = (str: TernaryType) => {
   switch (str) {
     case "T":
       return "有";
