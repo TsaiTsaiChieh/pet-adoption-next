@@ -7,7 +7,8 @@
     "build": "next build",
     "start": "next start",
     "lint": "next lint --fix",
-    "prepare": "husky"
+    "prepare": "husky",
+    "analyze": "ANALYZE=true npm run build"
   },
   "dependencies": {
     "@chakra-ui/react": "^2.10.2",
@@ -25,9 +26,11 @@
     "use-debounce": "^10.0.4"
   },
   "devDependencies": {
+    "@next/bundle-analyzer": "^15.0.2",
     "@types/node": "^20",
     "@types/react": "^18",
     "@types/react-dom": "^18",
+    "@types/react-lazyload": "^3.2.3",
     "eslint": "^8.57.1",
     "eslint-config-next": "^14.2.15",
     "eslint-plugin-react-hooks": "^5.0.0",

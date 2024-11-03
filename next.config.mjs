@@ -1,11 +1,16 @@
 /** @type {import('next').NextConfig} */
 import path from "path";
 import { fileURLToPath } from "url";
+import withBundleAnalyzer from "@next/bundle-analyzer";
 
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = path.dirname(__filename);
 
-const nextConfig = {
+const bundleAnalyzer = withBundleAnalyzer({
+  enabled: process.env.ANALYZE === "true",
+});
+
+const nextConfig = bundleAnalyzer({
   reactStrictMode: true,
   async redirects() {
     return [
@@ -26,6 +31,6 @@ const nextConfig = {
     NEXT_PUBLIC_VERCEL_GIT_COMMIT_MESSAGE:
       process.env.VERCEL_GIT_COMMIT_MESSAGE,
   },
-};
+});
 
 export default nextConfig;
