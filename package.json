@@ -15,7 +15,6 @@
     "@emotion/react": "^11.13.3",
     "@emotion/styled": "^11.13.0",
     "@reduxjs/toolkit": "^2.3.0",
-    "framer-motion": "^11.11.8",
     "next": "14.2.15",
     "react": "^18",
     "react-dom": "^18",
