@@ -5,7 +5,7 @@ import { Grid } from "@chakra-ui/react";
 import { useGetPetByFilterQuery } from "@app/services/pet";
 import { useAppSelector } from "@lib/hooks";
 import TopFilter from "@app/components/pet/TopFilter/TopFilter";
-import PetNotFound from "@app/components/pet/PetNotFound/PetNotFound";
+import NotFound from "@app/components/pet/NotFound/NotFound";
 import Pagination from "@app/components/pet/Pagination/Pagination";
 
 const Pet = () => {
@@ -15,7 +15,7 @@ const Pet = () => {
   return (
     <>
       <TopFilter />
-      {data?.length === 0 && <PetNotFound />}
+      {data?.length === 0 && <NotFound />}
       <Grid className={styles.petSection}>
         {data &&
           data.map(pet => (

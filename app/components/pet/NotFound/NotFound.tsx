@@ -1,7 +1,7 @@
-import styles from "./PetNotFound.module.scss";
+import styles from "./NotFound.module.scss";
 import { Image } from "@chakra-ui/react";
 
-const PetNotFound = () => {
+const NotFound = () => {
   return (
     <Image
       className={styles.petNotFound}
@@ -11,4 +11,4 @@ const PetNotFound = () => {
   );
 };
 
-export default PetNotFound;
+export default NotFound;
