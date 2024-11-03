@@ -32,12 +32,13 @@
   font-size: 14px;
   color: var(--primary-color) !important;
 
-
   &:hover
   {
     color: white !important;
     background: var(--primary-color) !important;
   }
+
+
 }
 
 .topFilter__kindFilterWrap
@@ -62,4 +63,10 @@
   {
     filter: var(--white-filter);
   }
+
+}
+
+.topFilter__button--is-activated
+{
+  text-decoration: underline dotted;
 }

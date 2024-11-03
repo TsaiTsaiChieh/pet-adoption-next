@@ -1,7 +1,7 @@
 import styles from "./TopFilter.module.scss";
 import { Button, Flex } from "@chakra-ui/react";
 import { ReactElement } from "react";
-import { useAppDispatch } from "@lib/hooks";
+import { useAppDispatch, useAppSelector } from "@lib/hooks";
 import { toggleDrawer } from "@app/features/drawerSlice";
 import { queryPet } from "@app/features/petSlice";
 import Icon from "@app/components/Icon/Icon";
@@ -9,29 +9,35 @@ import Icon from "@app/components/Icon/Icon";
 const TopFilter = () => {
   const iconSize = 28;
   const dispatch = useAppDispatch();
+  const { filter } = useAppSelector(state => state.pet);
 
   const BUTTON_SETTING: {
     label: string;
+    value: string;
     icon: ReactElement;
     onClick: () => void;
   }[] = [
     {
       label: "搜尋",
+      value: "搜尋",
       icon: <Icon src='/icons/filter.svg' size={iconSize} />,
       onClick: () => dispatch(toggleDrawer()),
     },
     {
       label: "全部",
+      value: "全部",
       icon: <Icon src='/icons/bear.svg' size={iconSize} />,
       onClick: () => dispatch(queryPet({ kind: undefined, page: 1 })),
     },
     {
       label: "汪汪",
+      value: "狗",
       icon: <Icon src='/icons/dog.svg' size={iconSize} />,
       onClick: () => dispatch(queryPet({ kind: "狗", page: 1 })),
     },
     {
       label: "喵喵",
+      value: "貓",
       icon: <Icon src='/icons/cat.svg' size={iconSize} />,
       onClick: () => dispatch(queryPet({ kind: "貓", page: 1 })),
     },
@@ -52,7 +58,11 @@ const TopFilter = () => {
             {BUTTON_SETTING.splice(1, 4).map(ele => (
               <Button
                 key={ele.label}
-                className={styles.topFilter__button}
+                className={`${styles.topFilter__button} ${
+                  filter.kind === ele.value
+                    ? styles["topFilter__button--is-activated"]
+                    : ""
+                }`}
                 aria-label={ele.label}
                 leftIcon={ele.icon}
                 onClick={ele.onClick}
