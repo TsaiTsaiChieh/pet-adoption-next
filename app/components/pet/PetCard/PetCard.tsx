@@ -8,7 +8,6 @@ import {
   Skeleton,
   ScaleFade,
 } from "@chakra-ui/react";
-import { MdPlace } from "react-icons/md";
 import LabelBox from "@app/components/pet/LabelBox/LabelBox";
 import Shelter from "@app/components/pet/Shelter/Shelter";
 import {
@@ -20,6 +19,7 @@ import {
 } from "@app/utils/converter";
 import { calcDaysSince, textClearUp } from "@app/utils/utils";
 import Avatar from "@app/components/pet/Avatar/Avatar";
+import Icon from "@app/components/Icon/Icon";
 
 interface Props {
   isLoading: boolean;
@@ -82,7 +82,7 @@ const PetCard = ({
           <Box className={styles.petCard__desc}>
             <span className={styles.petCard__title}>{title}</span>
             <Flex className={styles.petCard__placeWrap}>
-              <MdPlace className={styles.petCard__placeIcon} />
+              <Icon src='/icons/place.svg' size={26} />
               <span className={styles.petCard__placeText}>{place}</span>
             </Flex>
 

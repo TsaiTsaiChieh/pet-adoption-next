@@ -1,18 +1,15 @@
-"use clinent";
 import styles from "./TopFilter.module.scss";
 import { Button, Flex } from "@chakra-ui/react";
 import { ReactElement } from "react";
 import { useAppDispatch } from "@lib/hooks";
-import { LuDog, LuCat } from "react-icons/lu";
-import { MdFilterAlt } from "react-icons/md";
 import { toggleDrawer } from "@app/features/drawerSlice";
-import { RiBearSmileLine } from "react-icons/ri";
 import { queryPet } from "@app/features/petSlice";
+import Icon from "@app/components/Icon/Icon";
 
 const TopFilter = () => {
+  const iconSize = 28;
   const dispatch = useAppDispatch();
 
-  const iconSize = 28;
   const BUTTON_SETTING: {
     label: string;
     icon: ReactElement;
@@ -20,22 +17,22 @@ const TopFilter = () => {
   }[] = [
     {
       label: "搜尋",
-      icon: <MdFilterAlt size={iconSize} />,
+      icon: <Icon src='/icons/filter.svg' size={iconSize} />,
       onClick: () => dispatch(toggleDrawer()),
     },
     {
       label: "全部",
-      icon: <RiBearSmileLine size={iconSize} />,
+      icon: <Icon src='/icons/bear.svg' size={iconSize} />,
       onClick: () => dispatch(queryPet({ kind: undefined, page: 1 })),
     },
     {
       label: "汪汪",
-      icon: <LuDog size={iconSize} />,
+      icon: <Icon src='/icons/dog.svg' size={iconSize} />,
       onClick: () => dispatch(queryPet({ kind: "狗", page: 1 })),
     },
     {
       label: "喵喵",
-      icon: <LuCat size={iconSize} />,
+      icon: <Icon src='/icons/cat.svg' size={iconSize} />,
       onClick: () => dispatch(queryPet({ kind: "貓", page: 1 })),
     },
   ];

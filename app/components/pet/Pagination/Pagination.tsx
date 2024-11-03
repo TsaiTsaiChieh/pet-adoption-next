@@ -3,14 +3,9 @@ import styles from "./Pagination.module.scss";
 import { Flex, Input } from "@chakra-ui/react";
 import { IconButton } from "@chakra-ui/react";
 import { useAppDispatch, useAppSelector } from "@lib/hooks";
-import {
-  FaAngleLeft,
-  FaAnglesLeft,
-  FaAngleRight,
-  FaAnglesRight,
-} from "react-icons/fa6";
 import { ChangeEvent, useEffect, useState } from "react";
 import { useDebouncedCallback } from "use-debounce";
+import Icon from "@app/components/Icon/Icon";
 
 const Pagination = () => {
   const size = 20;
@@ -48,7 +43,7 @@ const Pagination = () => {
         aria-label='double-left'
         onClick={() => debounceAndGo2Top(filter.page - 10)}
       >
-        <FaAnglesLeft size={size} />
+        <Icon src='/icons/angles-left.svg' size={size} />
       </IconButton>
       <IconButton
         className={styles.paginator__button}
@@ -56,7 +51,7 @@ const Pagination = () => {
         aria-label='left'
         onClick={() => debounceAndGo2Top(filter.page - 1)}
       >
-        <FaAngleLeft size={size} />
+        <Icon src='/icons/angle-left.svg' size={size} />
       </IconButton>
       <Input
         min='1'
@@ -72,7 +67,7 @@ const Pagination = () => {
         aria-label='double-right'
         onClick={() => debounceAndGo2Top(filter.page + 1)}
       >
-        <FaAngleRight size={size} />
+        <Icon src='/icons/angle-right.svg' size={size} />
       </IconButton>
       <IconButton
         className={styles.paginator__button}
@@ -80,7 +75,7 @@ const Pagination = () => {
         aria-label='right'
         onClick={() => debounceAndGo2Top(filter.page + 10)}
       >
-        <FaAnglesRight size={size} />
+        <Icon src='/icons/angles-right.svg' size={size} />
       </IconButton>
     </Flex>
   );

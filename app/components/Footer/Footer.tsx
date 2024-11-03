@@ -1,13 +1,13 @@
 import styles from "./Footer.module.scss";
+import Icon from "@app/components/Icon/Icon";
 import { Flex } from "@chakra-ui/react";
-import { FaGithubAlt } from "react-icons/fa";
 
 const Footer = () => {
   return (
     <footer className={styles.footer}>
       <Flex className={styles.footer__content}>
         <Flex className={styles.footer__contactWrap}>
-          <FaGithubAlt size={28} />
+          <Icon src='/icons/github.svg' size={28} color='white' />
           <div className={styles.footer__contact}>
             <a
               href='https://github.com/TsaiTsaiChieh/pet-adoption-next/issues'

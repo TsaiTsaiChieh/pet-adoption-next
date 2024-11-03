@@ -1,7 +1,7 @@
 import styles from "./ScrollButton.module.scss";
 import { IconButton } from "@chakra-ui/react";
-import { FaChevronCircleUp, FaChevronCircleDown } from "react-icons/fa";
 import { useState, useEffect } from "react";
+import Icon from "@app/components/Icon/Icon";
 
 const ScrollButton = () => {
   const [isAtTop, setIsAtTop] = useState(true);
@@ -32,9 +32,9 @@ const ScrollButton = () => {
       onClick={isAtTop ? scroll2Bottom : scroll2Top}
     >
       {isAtTop ? (
-        <FaChevronCircleDown className={styles.icon} size={32} />
+        <Icon src='/icons/circle-down.svg' size={32} />
       ) : (
-        <FaChevronCircleUp className={styles.icon} size={32} />
+        <Icon src='/icons/circle-up.svg' size={32} />
       )}
     </IconButton>
   );

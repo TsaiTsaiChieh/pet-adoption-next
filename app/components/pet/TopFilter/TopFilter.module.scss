@@ -12,6 +12,7 @@
   padding: 8px;
   justify-content: center;
   border-top: 3.5px solid var(--primary-color);
+
 }
 
 .topFilter__filterContent
@@ -55,5 +56,10 @@
   {
     color: white !important;
     background: var(--primary-color) !important;
+  }
+
+  &:hover img
+  {
+    filter: var(--white-filter);
   }
 }
