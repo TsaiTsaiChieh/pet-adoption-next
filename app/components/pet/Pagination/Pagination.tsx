@@ -15,7 +15,7 @@ import { useDebouncedCallback } from "use-debounce";
 const Pagination = () => {
   const size = 20;
   const dispatch = useAppDispatch();
-  const { filter } = useAppSelector(state => state.pet);
+  const { data, filter } = useAppSelector(state => state.pet);
   const [pageInput, setPageInput] = useState<number | string>(filter.page);
   useEffect(() => {
     if (filter.page >= 1) setPageInput(filter.page);
@@ -35,6 +35,10 @@ const Pagination = () => {
   const debouncedPage = useDebouncedCallback((value: number) => {
     dispatch(queryPet({ ...filter, page: value }));
   }, 200);
+  const debounceAndGo2Top = (value: number) => {
+    debouncedPage(value);
+    window.scrollTo({ top: 0, behavior: "smooth" });
+  };
 
   return (
     <Flex className={styles.paginator}>
@@ -42,7 +46,7 @@ const Pagination = () => {
         className={styles.paginator__button}
         disabled={filter.page < 11}
         aria-label='double-left'
-        onClick={() => debouncedPage(filter.page - 10)}
+        onClick={() => debounceAndGo2Top(filter.page - 10)}
       >
         <FaAnglesLeft size={size} />
       </IconButton>
@@ -50,7 +54,7 @@ const Pagination = () => {
         className={styles.paginator__button}
         disabled={filter.page <= 1}
         aria-label='left'
-        onClick={() => debouncedPage(filter.page - 1)}
+        onClick={() => debounceAndGo2Top(filter.page - 1)}
       >
         <FaAngleLeft size={size} />
       </IconButton>
@@ -64,15 +68,17 @@ const Pagination = () => {
       />
       <IconButton
         className={styles.paginator__button}
+        disabled={data?.length === 0}
         aria-label='double-right'
-        onClick={() => debouncedPage(filter.page + 1)}
+        onClick={() => debounceAndGo2Top(filter.page + 1)}
       >
         <FaAngleRight size={size} />
       </IconButton>
       <IconButton
         className={styles.paginator__button}
+        disabled={data?.length === 0}
         aria-label='right'
-        onClick={() => debouncedPage(filter.page + 10)}
+        onClick={() => debounceAndGo2Top(filter.page + 10)}
       >
         <FaAnglesRight size={size} />
       </IconButton>
