@@ -36,7 +36,7 @@ export const ternaryConverter = (str: TernaryType) => {
     case "T":
       return "有";
     case "F":
-      return "無";
+      return "否";
     default:
       return "未知";
   }
