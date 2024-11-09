@@ -1,5 +1,12 @@
 @import "@styles/mixin";
 
+.container
+{
+  margin: auto;
+  flex-direction: column;
+  align-items: center;
+}
+
 .petSection
 {
   margin: auto;
@@ -7,6 +14,7 @@
   min-height: 80vh;
   max-width: 85%;
   gap: 12px;
+  justify-content: space-around;
 
   @include respond-to(pad)
   {

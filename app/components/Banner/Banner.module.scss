@@ -1,0 +1,72 @@
+@import "@styles/mixin";
+
+.container
+{
+  position: relative;
+  width: 100%;
+  max-width: 80%;
+  justify-content: center;
+  margin: 28px 0;
+
+  @include respond-to(pad)
+  {
+    width: calc(80% - 18px);
+    margin: 32px 0;
+  }
+
+  @include respond-to(desktop)
+  {
+    max-width: calc(75% - 24px);
+  }
+}
+
+.container__img
+{
+  width: 100%;
+  height: 200px;
+  margin: auto;
+  background: var(--primary-color);
+  border-radius: 10px;
+  background-image: url("/imgs/group-of-pets.webp");
+  background-repeat: no-repeat;
+  background-size: contain;
+  background-position: bottom;
+
+  @include respond-to(pad)
+  {
+    height: 250px;
+  }
+
+  @include respond-to(desktop)
+  {
+    height: 280px;
+  }
+
+}
+
+.container__link
+{
+  letter-spacing: 1.8px;
+  position: absolute;
+  font-size: 18px;
+  font-weight: bold;
+  color: white;
+  z-index: 10;
+  top: 32%;
+  text-align: center;
+  left: 0;
+  right: 0;
+  margin: 0 auto;
+
+  @include respond-to(pad)
+  {
+    letter-spacing: 2.2px;
+    font-size: 24px;
+  }
+
+  @include respond-to(desktop)
+  {
+    letter-spacing: 2.5px;
+    font-size: 28px;
+  }
+}
