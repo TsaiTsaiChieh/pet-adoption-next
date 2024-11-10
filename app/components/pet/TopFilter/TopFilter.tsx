@@ -27,19 +27,20 @@ const TopFilter = () => {
       label: "全部",
       value: "全部",
       icon: <Icon src='/icons/bear.svg' size={iconSize} />,
-      onClick: () => dispatch(queryPet({ kind: undefined, page: 1 })),
+      onClick: () =>
+        dispatch(queryPet({ ...filter, kind: undefined, page: 1 })),
     },
     {
       label: "汪汪",
       value: "狗",
       icon: <Icon src='/icons/dog.svg' size={iconSize} />,
-      onClick: () => dispatch(queryPet({ kind: "狗", page: 1 })),
+      onClick: () => dispatch(queryPet({ ...filter, kind: "狗", page: 1 })),
     },
     {
       label: "喵喵",
       value: "貓",
       icon: <Icon src='/icons/cat.svg' size={iconSize} />,
-      onClick: () => dispatch(queryPet({ kind: "貓", page: 1 })),
+      onClick: () => dispatch(queryPet({ ...filter, kind: "貓", page: 1 })),
     },
   ];
   return (
