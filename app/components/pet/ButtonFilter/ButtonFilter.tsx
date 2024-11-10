@@ -18,7 +18,6 @@ const ButtonFilter = ({ label, options, currVal, field, reducer }: Props) => {
   const updateFilter = (value: string) => {
     dispatch(reducer({ field, value }));
   };
-  console.log(currVal);
 
   return (
     <Flex className={styles.buttonContent}>

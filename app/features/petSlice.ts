@@ -25,10 +25,8 @@ export const petSlice = createSlice({
       state,
       action: PayloadAction<{ field: keyof PetFilterType; value: string }>
     ) => {
-      console.log(action.payload);
       const { field, value } = action.payload;
       state.tmpFilter = { ...state.tmpFilter, [field]: value };
-      console.log(state.tmpFilter);
     },
     queryPet: (state, action: PayloadAction<PetFilterType>) => {
       state.tmpFilter = action.payload;
@@ -38,8 +36,8 @@ export const petSlice = createSlice({
       state.tmpFilter = initialState.tmpFilter;
     },
   },
-  extraReducers: builer => {
-    builer.addMatcher(
+  extraReducers: builder => {
+    builder.addMatcher(
       petApi.endpoints.getPetByFilter.matchFulfilled,
       (state, action) => {
         state.data = action.payload;
