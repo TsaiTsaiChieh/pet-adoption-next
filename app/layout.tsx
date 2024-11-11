@@ -22,9 +22,7 @@ export const metadata: Metadata = {
   description:
     "流浪動物領養平台彙整了詳細的寵物資訊，方便您快速查找與篩選，並提供連結至全國動物收容管理系統，幫助您找到理想的毛小孩。",
   verification: {
-    other: {
-      "google-site-verification": "v6v5cQgu6HRRUeS6hooF0gk5DtXrkJfnurpBqCIMCxM",
-    },
+    google: "jk_t74cYy2JQjyBY",
   },
 };
 
