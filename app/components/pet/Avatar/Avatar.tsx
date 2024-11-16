@@ -14,7 +14,7 @@ const Avatar = ({ src, alt }: Props) => {
     <Box className={styles.avatarBox}>
       <Skeleton
         className={styles.avatarBox__skeleton}
-        isLoaded={!!loadedSrc}
+        isLoaded={loadedSrc === "" ? true : !!loadedSrc}
         fadeDuration={0.5}
       >
         <LazyLoad className={styles.avatar__lazyloading} offset={100}>
