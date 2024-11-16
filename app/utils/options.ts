@@ -1,4 +1,10 @@
-import { AgeEnum, BodyTypeEnum, CityEnum, SexEnum, ShelterEnum } from "@app/typings/enum";
+import {
+  AgeEnum,
+  BodyTypeEnum,
+  CityEnum,
+  SexEnum,
+  ShelterEnum,
+} from "@app/typings/enum";
 
 export const areaOptions: OptionsType<number>[] = [
   {
@@ -137,7 +143,7 @@ export const shelterOptions: OptionsType<number>[] = [
     label: "基隆市寵物銀行",
   },
   {
-    value: ShelterEnum.ILH,
+    value: ShelterEnum.ILN,
     label: "宜蘭縣流浪動物中途之家",
   },
   {
