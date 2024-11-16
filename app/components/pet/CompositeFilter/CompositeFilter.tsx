@@ -16,6 +16,8 @@ import Selector from "@app/components/Selector/Selector";
 import {
   queryPet,
   resetTmpFilter,
+  updateArea,
+  updateShelter,
   updateTmpFilterByField,
 } from "@app/features/petSlice";
 import {
@@ -55,7 +57,7 @@ const CompositeFilter = () => {
             currVal={tmpFilter.area}
             field='area'
             options={areaOptions}
-            reducer={updateTmpFilterByField}
+            reducer={updateArea}
           />
           <Selector
             placeholder='請選擇收容所'
@@ -63,7 +65,7 @@ const CompositeFilter = () => {
             currVal={tmpFilter.shelter}
             field='shelter'
             options={shelterOptions}
-            reducer={updateTmpFilterByField}
+            reducer={updateShelter}
           />
           <ButtonFilter
             label='年齡'

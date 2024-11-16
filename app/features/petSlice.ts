@@ -1,6 +1,7 @@
 import { createSlice } from "@reduxjs/toolkit";
 import type { PayloadAction } from "@reduxjs/toolkit";
 import { petApi } from "@app/services/pet";
+import { AreaMapByShelter, ShelterMapByArea } from "@app/utils/constants";
 
 export interface PetState {
   data: PetDataType[];
@@ -23,9 +24,39 @@ export const petSlice = createSlice({
     },
     updateTmpFilterByField: (
       state,
-      action: PayloadAction<{ field: keyof PetFilterType; value: string }>
+      action: PayloadAction<{
+        field: keyof PetFilterType;
+        value: string;
+      }>
     ) => {
       const { field, value } = action.payload;
+      state.tmpFilter = { ...state.tmpFilter, [field]: value };
+    },
+    updateArea: (
+      state,
+      action: PayloadAction<{
+        field: keyof PetFilterType;
+        value: string;
+      }>
+    ) => {
+      const { field, value } = action.payload;
+      console.log({ field, value });
+      if (field === "area") {
+        state.tmpFilter.shelter = ShelterMapByArea[value];
+      }
+      state.tmpFilter = { ...state.tmpFilter, [field]: value };
+    },
+    updateShelter: (
+      state,
+      action: PayloadAction<{
+        field: keyof PetFilterType;
+        value: string;
+      }>
+    ) => {
+      const { field, value } = action.payload;
+      if (field === "shelter") {
+        state.tmpFilter.area = AreaMapByShelter[value];
+      }
       state.tmpFilter = { ...state.tmpFilter, [field]: value };
     },
     queryPet: (state, action: PayloadAction<PetFilterType>) => {
@@ -49,6 +80,8 @@ export const petSlice = createSlice({
 export const {
   initPetFilter,
   updateTmpFilterByField,
+  updateArea,
+  updateShelter,
   queryPet,
   resetTmpFilter,
 } = petSlice.actions;

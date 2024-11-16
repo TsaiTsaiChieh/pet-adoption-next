@@ -49,7 +49,7 @@ export enum ShelterEnum {
   KHH01 = 75, // 高雄市壽山動物保護教育園區
   KHH02 = 76, // 高雄市燕巢動物保護關愛園區
   IUH = 77, // 屏東縣流浪動物收容所
-  ILH = 78, // 宜蘭縣流浪動物中途之家
+  ILN = 78, // 宜蘭縣流浪動物中途之家
   HWA = 79, // 花蓮縣流浪犬中途之家
   TTT = 80, // 臺東縣動物收容中心
   LNN = 81, // 連江縣流浪犬收容中心
@@ -76,4 +76,3 @@ export enum BodyTypeEnum {
   MEDIUM = "MEDIUM",
   SMALL = "SMALL",
 }
-
