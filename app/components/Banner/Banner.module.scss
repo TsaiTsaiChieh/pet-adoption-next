@@ -60,6 +60,7 @@
   color: white;
   z-index: 10;
   text-align: center;
+  transform: translateY(-5%);
 
   @include respond-to(pad)
   {
