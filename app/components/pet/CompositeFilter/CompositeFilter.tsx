@@ -21,6 +21,7 @@ import {
 import {
   ageOptions,
   areaOptions,
+  bodyTypeOptions,
   sexOptions,
   shelterOptions,
 } from "@app/utils/options";
@@ -76,6 +77,13 @@ const CompositeFilter = () => {
             currVal={tmpFilter.sex}
             field='sex'
             options={sexOptions}
+            reducer={updateTmpFilterByField}
+          />
+          <ButtonFilter
+            label='體型'
+            currVal={tmpFilter.bodyType}
+            field='bodyType'
+            options={bodyTypeOptions}
             reducer={updateTmpFilterByField}
           />
         </DrawerBody>

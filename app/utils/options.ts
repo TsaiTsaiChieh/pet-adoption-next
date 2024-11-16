@@ -1,4 +1,4 @@
-import { AgeEnum, CityEnum, SexEnum, ShelterEnum } from "@app/typings/enum";
+import { AgeEnum, BodyTypeEnum, CityEnum, SexEnum, ShelterEnum } from "@app/typings/enum";
 
 export const areaOptions: OptionsType<number>[] = [
   {
@@ -245,5 +245,20 @@ export const sexOptions: OptionsType<SexEnum>[] = [
   {
     value: SexEnum.FEMALE,
     label: "妹妹",
+  },
+];
+
+export const bodyTypeOptions: OptionsType<BodyTypeEnum>[] = [
+  {
+    value: BodyTypeEnum.BIG,
+    label: "大型",
+  },
+  {
+    value: BodyTypeEnum.MEDIUM,
+    label: "中型",
+  },
+  {
+    value: BodyTypeEnum.SMALL,
+    label: "小型",
   },
 ];

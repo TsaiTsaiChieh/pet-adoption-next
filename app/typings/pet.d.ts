@@ -7,6 +7,7 @@ type PetFilterType = {
   age?: string;
   sex?: string;
   area?: string;
+  bodyType?: PetBodyType;
   shelter?: string;
   page: number;
 };

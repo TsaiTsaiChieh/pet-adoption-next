@@ -70,3 +70,10 @@ export enum SexEnum {
   FEMALE = "F",
   MALE = "M",
 }
+
+export enum BodyTypeEnum {
+  BIG = "BIG",
+  MEDIUM = "MEDIUM",
+  SMALL = "SMALL",
+}
+
