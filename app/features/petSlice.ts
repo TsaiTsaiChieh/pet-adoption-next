@@ -40,7 +40,7 @@ export const petSlice = createSlice({
       }>
     ) => {
       const { field, value } = action.payload;
-      console.log({ field, value });
+
       if (field === "area") {
         state.tmpFilter.shelter = ShelterMapByArea[value];
       }
