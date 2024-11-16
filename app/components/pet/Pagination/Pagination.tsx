@@ -10,7 +10,7 @@ import Icon from "@app/components/Icon/Icon";
 const Pagination = () => {
   const size = 20;
   const dispatch = useAppDispatch();
-  const { data, filter } = useAppSelector(state => state.pet);
+  const { filter } = useAppSelector(state => state.pet);
   const [pageInput, setPageInput] = useState<number | string>(filter.page);
   useEffect(() => {
     if (filter.page >= 1) setPageInput(filter.page);
@@ -63,7 +63,6 @@ const Pagination = () => {
       />
       <IconButton
         className={styles.paginator__button}
-        disabled={data?.length === 0}
         aria-label='double-right'
         onClick={() => debounceAndGo2Top(filter.page + 1)}
       >
@@ -71,7 +70,6 @@ const Pagination = () => {
       </IconButton>
       <IconButton
         className={styles.paginator__button}
-        disabled={data?.length === 0}
         aria-label='right'
         onClick={() => debounceAndGo2Top(filter.page + 10)}
       >
