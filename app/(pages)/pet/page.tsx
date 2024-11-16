@@ -12,7 +12,12 @@ import Banner from "@app/components/Banner/Banner";
 
 const Pet = () => {
   const { filter } = useAppSelector(state => state.pet);
-  const { data, isLoading, isFetching } = useGetPetByFilterQuery({ ...filter });
+  const { data, isLoading, isFetching, refetch } = useGetPetByFilterQuery(
+    {
+      ...filter,
+    },
+    { refetchOnMountOrArgChange: true }
+  );
 
   return (
     <>
@@ -45,7 +50,7 @@ const Pet = () => {
             />
           ))}
         </Grid>
-        <Pagination />
+        <Pagination refetch={refetch} />
       </Flex>
     </>
   );
