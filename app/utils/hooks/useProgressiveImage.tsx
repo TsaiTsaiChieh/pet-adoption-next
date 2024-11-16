@@ -4,6 +4,9 @@ const useProgressiveImage = (src: string) => {
   const [source, setSource] = useState("");
 
   useEffect(() => {
+    if (!src) {
+      return;
+    }
     const img = new Image();
     img.src = src;
     img.onload = () => setSource(src);

@@ -9,12 +9,13 @@ interface Props {
 }
 const Avatar = ({ src, alt }: Props) => {
   const loadedSrc = useProgressiveImage(src);
+  const isLoading = !!src && !loadedSrc;
 
   return (
     <Box className={styles.avatarBox}>
       <Skeleton
         className={styles.avatarBox__skeleton}
-        isLoaded={loadedSrc === "" ? true : !!loadedSrc}
+        isLoaded={!isLoading}
         fadeDuration={0.5}
       >
         <LazyLoad className={styles.avatar__lazyloading} offset={100}>
