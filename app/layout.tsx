@@ -18,7 +18,7 @@ const geistMono = localFont({
 });
 
 export const metadata: Metadata = {
-  title: "浪窩",
+  title: "浪窩 | 動物領養",
   description:
     "«浪窩»致力於成為台灣最便捷的動物領養平台。我們整合全國收容中心的寵物數據，提供清晰的分類與篩選功能，用戶可以依需求快速瀏覽狗、貓等多種類別的毛小孩。此外，我們還提供鏈結至政府的動物收容管理系統，讓領養不再困難。",
   verification: {
