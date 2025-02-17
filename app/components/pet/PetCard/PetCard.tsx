@@ -74,7 +74,7 @@ const PetCard = ({
     sex
   )}的${ageConverter(age)}${petKind}`;
   const genDetail = `${
-    updateDate !== "" ? `${updateDate}更新。 ` : ""
+    updateDate !== "" ? `${updateDate} 更新。 ` : ""
   }${remark}`;
 
   return (
