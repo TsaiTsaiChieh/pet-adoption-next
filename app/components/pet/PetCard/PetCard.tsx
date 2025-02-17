@@ -57,11 +57,12 @@ const PetCard = ({
   bacterin,
   sterilization,
   updateDate,
+  createDate,
 }: Props) => {
   const details = [
     {
       label: "等待",
-      value: calcDaysSince(updateDate).toString(),
+      value: calcDaysSince(createDate).toString(),
       prefix: "天",
     },
     { label: "疫苗", value: ternaryConverter(bacterin) },
@@ -72,7 +73,9 @@ const PetCard = ({
   const title = `${textClearUp(color)}${petBody}${sexConverter(
     sex
   )}的${ageConverter(age)}${petKind}`;
-  const genDetail = `${updateDate} 更新。${remark}`;
+  const genDetail = `${
+    updateDate !== "" ? `${updateDate}更新。 ` : ""
+  }${remark}`;
 
   return (
     <Skeleton isLoaded={!isLoading} className={styles.loading}>
